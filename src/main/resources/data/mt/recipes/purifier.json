@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "#C#",
+    "MMM"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:water_bucket"
+    },
+    "C": {
+      "item": "minecraft:cauldron"
+    },
+    "M": {
+      "item": "mt:magic_stick"
+    }
+  },
+  "result": {
+    "item": "mt:purifier",
+    "count": 1
+  },
+  "group": "purifier"
+}

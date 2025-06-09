@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/leaves",
+    "textures": {
+      "all": "mt:block/ice_leaves"
+    }
+  }

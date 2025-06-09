@@ -1,0 +1,7 @@
+{
+  "name": "Ores",
+  "description": "All the ores in the world",
+  "icon": "mt:mana_ore",
+  "parent": "mt:world",
+  "sortnum": 1
+}

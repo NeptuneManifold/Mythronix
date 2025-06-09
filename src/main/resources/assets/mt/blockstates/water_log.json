@@ -1,0 +1,16 @@
+{
+    "variants": {
+      "axis=x": {
+        "model": "mt:block/water_log_horizontal",
+        "x": 90,
+        "y": 90
+      },
+      "axis=y": {
+        "model": "mt:block/water_log"
+      },
+      "axis=z": {
+        "model": "mt:block/water_log_horizontal",
+        "x": 90
+      }
+    }
+  }

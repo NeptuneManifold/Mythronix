@@ -1,0 +1,18 @@
+{
+  "type": "mt:purify",
+  "ingredients": [
+    {
+      "item": "mt:impure_mana"
+    },
+    {
+      "item": "mt:lys_flower"
+    },
+    {
+      "item": "minecraft:charcoal"
+    }
+  ],
+  "output":
+    {
+      "item": "mt:solidified_mana"
+    }
+}

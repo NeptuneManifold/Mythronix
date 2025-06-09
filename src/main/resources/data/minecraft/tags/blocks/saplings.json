@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "mt:fire_sapling",
+    "mt:ice_sapling",
+    "mt:nature_sapling",
+    "mt:wind_sapling",
+    "mt:water_sapling",
+    "mt:arcane_sapling"
+  ]
+}

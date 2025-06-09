@@ -1,0 +1,36 @@
+{
+  "parent": "mt:root",
+  "display": {
+    "icon": {
+      "item": "mt:magic_stick"
+    },
+    "title": {
+      "translate": "mt.advancements.magic_stick.title"
+    },
+    "description": {
+      "translate": "mt.advancements.magic_stick.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "magic_stick": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mt:magic_stick"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "magic_stick"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Purifier",
+  "icon": "mt:purifier",
+  "category": "mt:machines",
+  "anchor": "ore",
+  "priority": false,
+  "sortnum": 1,
+  "pages": [
+    {
+      "anchor": "ore",
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "mt:purifier"
+      },
+      "title": "Purifier",
+      "text": "The Purifier can purify any items, for example it can purify the mana to be able to use it."
+    }
+  ]
+}

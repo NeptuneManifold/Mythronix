@@ -1,0 +1,21 @@
+{
+  "name": "Magic Forest",
+  "icon": "mt:water_sapling",
+  "category": "mt:biomes_and_dimensions",
+  "priority": false,
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Magic Forest",
+      "text": "The Magic Forest is a new forest in the overworld where you can found the elements woods and the Lys Flower"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "mt:textures/gui/guide/magic_forest.png"
+      ],
+      "border": true
+    }
+  ]
+}

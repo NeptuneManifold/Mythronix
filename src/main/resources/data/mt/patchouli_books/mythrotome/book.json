@@ -1,0 +1,12 @@
+{
+  "name": "MythroTome",
+  "landing_text": "The ultimate guide for Mythronix mod",
+  "book_texture": "patchouli:textures/gui/book_purple.png",
+  "model": "patchouli:book_purple",
+  "text_color": "3f0085",
+  "header_color": "5c0085",
+  "index_icon": "mt:solidified_mana",
+  "show_progress": false,
+  "version": "1",
+  "creative_tab": "mythronix"
+}

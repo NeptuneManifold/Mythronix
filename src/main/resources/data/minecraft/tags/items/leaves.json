@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "mt:fire_leaves",
+    "mt:ice_leaves",
+    "mt:nature_leaves",
+    "mt:wind_leaves",
+    "mt:water_leaves",
+    "mt:arcane_leaves"
+  ]
+}

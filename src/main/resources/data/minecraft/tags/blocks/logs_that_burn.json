@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "mt:fire_log",
+    "mt:ice_log",
+    "mt:nature_log",
+    "mt:wind_log",
+    "mt:water_log",
+    "mt:arcane_log"
+  ]
+}

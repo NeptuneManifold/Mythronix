@@ -1,0 +1,36 @@
+{
+  "parent": "mt:magic_stick",
+  "display": {
+    "icon": {
+      "item": "mt:purifier"
+    },
+    "title": {
+      "translate": "mt.advancements.purify.title"
+    },
+    "description": {
+      "translate": "mt.advancements.purify.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "purifier": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mt:purifier"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "purifier"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,36 @@
+{
+  "parent": "mt:purify",
+  "display": {
+    "icon": {
+      "item": "mt:solidified_mana"
+    },
+    "title": {
+      "translate": "mt.advancements.mana.title"
+    },
+    "description": {
+      "translate": "mt.advancements.mana.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "solidified_mana": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mt:solidified_mana"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "solidified_mana"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

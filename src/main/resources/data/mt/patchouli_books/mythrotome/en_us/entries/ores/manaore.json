@@ -1,0 +1,36 @@
+{
+  "name": "Mana Ore",
+  "icon": "mt:impure_mana",
+  "category": "mt:ores",
+  "priority": true,
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Mana Ore",
+      "text": "The Mana Ore is the most powerful ore in the magical world, you can create spells, machines, and more !"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "mt:mana_ore"
+      },
+      "title": "Mana Ore",
+      "text": "The Mana Ore can be found underground the Magic Forest biome in y-40, it quite rare but we can feel is magic power in our hands after mining it"
+    },
+    {
+      "type": "patchouli:smelting",
+      "recipe": "mt:impure_mana_brun",
+      "title": "Impure Mana",
+      "text": "The Impure Mana is what you obtain after smelting or mining the Mana Ore if you want to use it you have to purify it in a $(l:machines/purifier#ore)Purifier $(/l)"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "mt:solidified_mana"
+      },
+      "title": "Solidified Mana",
+      "text": "The Solidified Mana is the result of the purified Mana, it have all the magic properties and can be used in multiple recipes, spells and lot more"
+    }
+  ]
+}

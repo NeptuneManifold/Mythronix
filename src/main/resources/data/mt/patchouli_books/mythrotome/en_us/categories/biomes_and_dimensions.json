@@ -1,0 +1,7 @@
+{
+  "name": "Biomes and Dimensions",
+  "description": "The magic is not only in the overworld discover the dimensions you can travel",
+  "icon": "minecraft:beacon",
+  "parent": "mt:world",
+  "sortnum": 2
+}

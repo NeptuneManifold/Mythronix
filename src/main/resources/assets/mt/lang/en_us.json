@@ -1,0 +1,57 @@
+{
+  "itemGroup.mythronix": "Mythronix",
+
+  "block.mt.fire_log": "Fire Log",
+  "block.mt.ice_log": "Ice Log",
+  "block.mt.arcane_log": "Arcane Log",
+  "block.mt.water_log": "Water Log",
+  "block.mt.wind_log": "Wind Log",
+  "block.mt.nature_log": "Nature Log",
+
+  "block.mt.fire_leaves": "Fire Leaves",
+  "block.mt.ice_leaves": "Ice Leaves",
+  "block.mt.arcane_leaves": "Arcane Leaves",
+  "block.mt.water_leaves": "Water Leaves",
+  "block.mt.wind_leaves": "Wind Leaves",
+  "block.mt.nature_leaves": "Nature Leaves",
+
+  "block.mt.fire_sapling": "Fire Sapling",
+  "block.mt.ice_sapling": "Ice Sapling",
+  "block.mt.arcane_sapling": "Arcane Sapling",
+  "block.mt.water_sapling": "Water Sapling",
+  "block.mt.wind_sapling": "Wind Sapling",
+  "block.mt.nature_sapling": "Nature Sapling",
+
+  "block.mt.mana_ore": "Mana Ore",
+
+  "block.mt.lys_flower": "Lys Flower",
+
+  "block.mt.purifier": "Purifier",
+
+  "item.mt.magic_stick": "Magic Stick",
+  "item.mt.impure_mana": "Impure Mana",
+  "item.mt.solidified_mana": "Solidified Mana",
+
+  "item.mt.etherum_buckmt": "Etherum Bucket",
+  "fluid.mt.etherum": "Etherum",
+
+  "commands.mt.manalevel.add.levels.success.multiple": "Added %s mana levels to %s players",
+  "commands.mt.manalevel.add.levels.success.single": "Added %s mana level to %s",
+  "commands.mt.manalevel.add.xp.success.multiple": "Added %s mana XP to %s players",
+  "commands.mt.manalevel.add.xp.success.single": "Added %s mana XP to %s",
+  "commands.mt.manalevel.get.levels.success": "Level = %s",
+  "commands.mt.manalevel.get.xp.success": "Level = %s",
+
+  "screen.mt.purifier": "Purifier",
+
+  "jei.mt.purify": "Purify",
+
+  "mt.advancements.root.title": "Mythronix",
+  "mt.advancements.root.description": "Discover the magic world of Mythronix",
+  "mt.advancements.magic_stick.title": "A powerful stick",
+  "mt.advancements.magic_stick.description": "Obtain a magic stick by destroying a tree in the Magic Forest biome",
+  "mt.advancements.purify.title": "Let's pure this world",
+  "mt.advancements.purify.description": "Craft a Purifier to start mana manipulation",
+  "mt.advancements.mana.title": "Magic Hardware",
+  "mt.advancements.mana.description": "Purify some impure mana to obtain a Solidified Mana ingot"
+}
