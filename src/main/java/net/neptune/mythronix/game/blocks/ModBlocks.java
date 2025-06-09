@@ -53,6 +53,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> MANA_ORE = newBlockBase("mana_ore", ModTabs.mythronix, Material.STONE, 2, ToolType.PICKAXE,
             4.0F,4.0F, SoundType.STONE);
 
+    public static final RegistryObject<Block> PYRROTHITYE_ORE = registerBlock("pyrrothite_ore", () -> new PyrrothiteOreBlock(AbstractBlock.Properties.of(Material.STONE)
+            .harvestTool(ToolType.PICKAXE).harvestLevel(3).strength(6.0F, 6.0F).requiresCorrectToolForDrops().sound(SoundType.NETHER_ORE)),
+            ModTabs.mythronix);
+
     public static final RegistryObject<Block> LYS_FLOWER = newFlower("lys_flower", ModTabs.mythronix, Effects.GLOWING, 60);
 
     //geckolib

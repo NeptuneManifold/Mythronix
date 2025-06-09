@@ -26,6 +26,7 @@ public class ModOreGeneration {
 
     public static void generateOres(final BiomeLoadingEvent e) {
         spawnOreInSpecificModBiome(ModBiomes.MAGIC_FOREST.get(), OreType.MANA, e, Dimension.OVERWORLD.toString());
+        spawnOreInNetherInAllBiomes(OreType.PYRROTHITE, e);
     }
 
 
@@ -78,6 +79,18 @@ public class ModOreGeneration {
 
     private static void spawnOreInOverworldInAllBiomes(OreType ore, final BiomeLoadingEvent event) {
         OreFeatureConfig oreFeatureConfig = new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
+                ore.getBlock().get().defaultBlockState(), ore.getMaxVeinSize());
+
+        ConfiguredPlacement<TopSolidRangeConfig> configuredPlacement = Placement.RANGE.configured(
+                new TopSolidRangeConfig(ore.getMinHeight(), ore.getMinHeight(), ore.getMaxHeight()));
+
+        ConfiguredFeature<?, ?> oreFeature = registerOreFeature(ore, oreFeatureConfig, configuredPlacement);
+
+        event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, oreFeature);
+    }
+
+    private static void spawnOreInNetherInAllBiomes(OreType ore, final BiomeLoadingEvent event) {
+        OreFeatureConfig oreFeatureConfig = new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK,
                 ore.getBlock().get().defaultBlockState(), ore.getMaxVeinSize());
 
         ConfiguredPlacement<TopSolidRangeConfig> configuredPlacement = Placement.RANGE.configured(

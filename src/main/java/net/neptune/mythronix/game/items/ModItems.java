@@ -19,6 +19,8 @@ public class ModItems {
     public static final RegistryObject<Item> IMPURE_MANA = newItemBase("impure_mana", ModTabs.mythronix);
     public static final RegistryObject<Item> SOLIDIFIED_MANA = newItemBase("solidified_mana", ModTabs.mythronix);
 
+    public static final RegistryObject<Item> PYRROTHITE_INGOT = newItemBase("pyrrothite_ingot", ModTabs.mythronix);
+
     public static final RegistryObject<Item> ETHERUM_BUCKET = ITEMS.register("etherum_bucket", () ->
             new BucketItem(() -> ModFluids.ETHERUM_FLUID.get(), new Item.Properties().tab(ModTabs.mythronix).stacksTo(1)));
 

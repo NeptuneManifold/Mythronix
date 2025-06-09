@@ -23,6 +23,7 @@
   "block.mt.nature_sapling": "Nature Sapling",
 
   "block.mt.mana_ore": "Mana Ore",
+  "block.mt.pyrrothite_ore": "Pyrrothite Ore",
 
   "block.mt.lys_flower": "Lys Flower",
 
@@ -31,6 +32,7 @@
   "item.mt.magic_stick": "Magic Stick",
   "item.mt.impure_mana": "Impure Mana",
   "item.mt.solidified_mana": "Solidified Mana",
+  "item.mt.pyrrothite_ingot": "Pyrrothite Ingot",
 
   "item.mt.etherum_buckmt": "Etherum Bucket",
   "fluid.mt.etherum": "Etherum",
