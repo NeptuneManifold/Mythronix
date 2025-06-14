@@ -12,6 +12,7 @@ public class ModBiomesGeneration {
 
     public static void generatesBiomes() {
         addBiome(ModBiomes.MAGIC_FOREST.get(), BiomeManager.BiomeType.WARM, 20, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.MAGICAL);
+        addBiome(ModBiomes.SPIRIT_PLAINS.get(), BiomeManager.BiomeType.WARM, 10, BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.MAGICAL);
     }
 
     private static void addBiome(Biome biome, BiomeManager.BiomeType type, int weight, BiomeDictionary.Type... types){

@@ -18,6 +18,13 @@ public class ModConfiguredSurfaceBuilder {
                     Blocks.SAND.defaultBlockState()
             )));
 
+    public static ConfiguredSurfaceBuilder<?> SPIRIT_PLAINS = register("spirit_plains",
+            SurfaceBuilder.DEFAULT.configured(new SurfaceBuilderConfig(
+                    Blocks.GRASS_BLOCK.defaultBlockState(),
+                    Blocks.DIRT.defaultBlockState(),
+                    Blocks.SAND.defaultBlockState()
+            )));
+
     private static <SC extends ISurfaceBuilderConfig>ConfiguredSurfaceBuilder<SC> register(String id,
                                                                                            ConfiguredSurfaceBuilder<SC> csb){
         return WorldGenRegistries.register(WorldGenRegistries.CONFIGURED_SURFACE_BUILDER,

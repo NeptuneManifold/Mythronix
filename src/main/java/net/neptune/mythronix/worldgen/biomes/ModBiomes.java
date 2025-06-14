@@ -15,6 +15,8 @@ public class ModBiomes {
 
     public static final RegistryObject<Biome> MAGIC_FOREST = BIOMES.register("magic_forest",
             () -> makeMagicForest(() -> ModConfiguredSurfaceBuilder.MAGIC_FOREST, 0.001F, 0.25F));
+    public static final RegistryObject<Biome> SPIRIT_PLAINS = BIOMES.register("spirit_plains",
+            () -> makeSpiritPlains(() -> ModConfiguredSurfaceBuilder.SPIRIT_PLAINS));
 
     private static Biome makeMagicForest(final Supplier<ConfiguredSurfaceBuilder<?>> surfaceBuilder, float depth, float scale){
         MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
@@ -44,6 +46,34 @@ public class ModBiomes {
                         .fogColor(0x0093ff)
                         .skyColor(0x00f7ff)
                         .grassColorOverride(0x00bcb3)
+                        .ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build())
+                .mobSpawnSettings(mobspawninfo$builder.build())
+                .generationSettings(biomegenerationsettings$builder.build())
+                .build();
+    }
+
+    private static Biome makeSpiritPlains(final Supplier<ConfiguredSurfaceBuilder<?>> surfaceBuilder){
+        MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
+
+        BiomeGenerationSettings.Builder biomegenerationsettings$builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ConfiguredSurfaceBuilders.GRASS);
+        DefaultBiomeFeatures.addDefaultOverworldLandStructures(biomegenerationsettings$builder);
+        DefaultBiomeFeatures.addDefaultCarvers(biomegenerationsettings$builder);
+        DefaultBiomeFeatures.addMossyStoneBlock(biomegenerationsettings$builder);
+        DefaultBiomeFeatures.addDefaultUndergroundVariety(biomegenerationsettings$builder);
+        DefaultBiomeFeatures.addDefaultOres(biomegenerationsettings$builder);
+        DefaultBiomeFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
+        DefaultBiomeFeatures.addPlainGrass(biomegenerationsettings$builder);
+        DefaultBiomeFeatures.addPlainVegetation(biomegenerationsettings$builder);
+
+        return (new Biome.Builder())
+                .precipitation(Biome.RainType.RAIN)
+                .biomeCategory(Biome.Category.PLAINS)
+                .depth(0.125F).scale(0.05F)
+                .temperature(0.8F).downfall(0.4F)
+                .specialEffects((new BiomeAmbience.Builder())
+                        .waterColor(0x0077b3).waterFogColor(0x45a6d8)
+                        .fogColor(0x45a6d8).skyColor(calculateSkyColor(0.8F))
+                        .grassColorOverride(0x36c9c0)
                         .ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build())
                 .mobSpawnSettings(mobspawninfo$builder.build())
                 .generationSettings(biomegenerationsettings$builder.build())
