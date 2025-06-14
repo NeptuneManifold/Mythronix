@@ -68,7 +68,7 @@ public class ModBiomes {
         return (new Biome.Builder())
                 .precipitation(Biome.RainType.RAIN)
                 .biomeCategory(Biome.Category.PLAINS)
-                .depth(0.125F).scale(0.05F)
+                .depth(0.125F).scale(0.08F)
                 .temperature(0.8F).downfall(0.4F)
                 .specialEffects((new BiomeAmbience.Builder())
                         .waterColor(0x0077b3).waterFogColor(0x45a6d8)
