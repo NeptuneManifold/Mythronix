@@ -7,6 +7,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.*;
 import net.neptune.mythronix.Main;
+import net.neptune.mythronix.worldgen.features.ModBiomeFeatures;
 
 import java.util.function.Supplier;
 
@@ -23,11 +24,11 @@ public class ModBiomes {
         DefaultBiomeFeatures.farmAnimals(mobspawninfo$builder);
         DefaultBiomeFeatures.commonSpawns(mobspawninfo$builder);
 
-        BiomeGenerationSettings.Builder biomegenerationsettings$builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ConfiguredSurfaceBuilders.GRASS);
+        BiomeGenerationSettings.Builder biomegenerationsettings$builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(surfaceBuilder);
         DefaultBiomeFeatures.addDefaultOverworldLandStructures(biomegenerationsettings$builder);
         DefaultBiomeFeatures.addDefaultCarvers(biomegenerationsettings$builder);
         DefaultBiomeFeatures.addDefaultMonsterRoom(biomegenerationsettings$builder);
-        DefaultBiomeFeatures.addMossyStoneBlock(biomegenerationsettings$builder);
+        ModBiomeFeatures.addManaStoneBlock(biomegenerationsettings$builder);
         DefaultBiomeFeatures.addDefaultUndergroundVariety(biomegenerationsettings$builder);
         DefaultBiomeFeatures.addDefaultOres(biomegenerationsettings$builder);
         DefaultBiomeFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);
@@ -55,10 +56,10 @@ public class ModBiomes {
     private static Biome makeSpiritPlains(final Supplier<ConfiguredSurfaceBuilder<?>> surfaceBuilder){
         MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
 
-        BiomeGenerationSettings.Builder biomegenerationsettings$builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(ConfiguredSurfaceBuilders.GRASS);
+        BiomeGenerationSettings.Builder biomegenerationsettings$builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(surfaceBuilder);
         DefaultBiomeFeatures.addDefaultOverworldLandStructures(biomegenerationsettings$builder);
         DefaultBiomeFeatures.addDefaultCarvers(biomegenerationsettings$builder);
-        DefaultBiomeFeatures.addMossyStoneBlock(biomegenerationsettings$builder);
+        ModBiomeFeatures.addManaStoneBlock(biomegenerationsettings$builder);
         DefaultBiomeFeatures.addDefaultUndergroundVariety(biomegenerationsettings$builder);
         DefaultBiomeFeatures.addDefaultOres(biomegenerationsettings$builder);
         DefaultBiomeFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);

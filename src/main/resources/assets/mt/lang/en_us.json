@@ -24,8 +24,16 @@
 
   "block.mt.mana_ore": "Mana Ore",
   "block.mt.pyrrothite_ore": "Pyrrothite Ore",
+  "block.mt.aqualite_ore": "Aqualite Ore",
+  "block.mt.phytolite_ore": "Phytolite Ore",
+  "block.mt.cryonite_ore": "Cryonite Ore",
+  "block.mt.arcanite_ore": "Arcanite Ore",
+  "block.mt.aeronite_ore": "Aeronite Ore",
 
   "block.mt.lys_flower": "Lys Flower",
+
+  "block.mt.mana_stone": "Mana Stone",
+  "block.mt.mana_cobblestone": "Mana Cobblestone",
 
   "block.mt.purifier": "Purifier",
 
@@ -33,6 +41,11 @@
   "item.mt.impure_mana": "Impure Mana",
   "item.mt.solidified_mana": "Solidified Mana",
   "item.mt.pyrrothite_ingot": "Pyrrothite Ingot",
+  "item.mt.aqualite_ingot": "Aqualite Ingot",
+  "item.mt.phytolite_ingot": "Phytolite Ingot",
+  "item.mt.cryonite_ingot": "Cryonite Ingot",
+  "item.mt.arcanite_ingot": "Arcanite Ingot",
+  "item.mt.aeronite_ingot": "Aeronite Ingot",
 
   "item.mt.etherum_buckmt": "Etherum Bucket",
   "fluid.mt.etherum": "Etherum",

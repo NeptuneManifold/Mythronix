@@ -14,6 +14,10 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.neptune.mythronix.Main;
 import net.neptune.mythronix.game.blocks.geckolib.PurifierBlock;
+import net.neptune.mythronix.game.blocks.ores.AqualiteOreBlock;
+import net.neptune.mythronix.game.blocks.ores.CryoniteOreBlock;
+import net.neptune.mythronix.game.blocks.ores.PhytoliteOreBlock;
+import net.neptune.mythronix.game.blocks.ores.PyrrothiteOreBlock;
 import net.neptune.mythronix.game.items.ModItems;
 import net.neptune.mythronix.game.trees.*;
 import net.neptune.mythronix.tabs.ModTabs;
@@ -53,9 +57,37 @@ public class ModBlocks {
     public static final RegistryObject<Block> MANA_ORE = newBlockBase("mana_ore", ModTabs.mythronix, Material.STONE, 2, ToolType.PICKAXE,
             4.0F,4.0F, SoundType.STONE);
 
+    public static final RegistryObject<Block> MANA_STONE = newBlockBase("mana_stone", ModTabs.mythronix, Material.STONE, 0, ToolType.PICKAXE,
+            1.5F, 6.0F, SoundType.STONE);
+    public static final RegistryObject<Block> MANA_COBBLESTONE = newBlockBase("mana_cobblestone", ModTabs.mythronix, Material.STONE, 0, ToolType.PICKAXE,
+            1.5F, 6.0F, SoundType.STONE);
+
     public static final RegistryObject<Block> PYRROTHITYE_ORE = registerBlock("pyrrothite_ore", () -> new PyrrothiteOreBlock(AbstractBlock.Properties.of(Material.STONE)
-            .harvestTool(ToolType.PICKAXE).harvestLevel(3).strength(6.0F, 6.0F).requiresCorrectToolForDrops().sound(SoundType.NETHER_ORE)),
+            .harvestTool(ToolType.PICKAXE).harvestLevel(3).strength(6.0F, 6.0F)
+                    .requiresCorrectToolForDrops().sound(SoundType.NETHER_ORE).lightLevel((p_235464_0_) -> {
+                return 3;
+            })),
             ModTabs.mythronix);
+
+    public static final RegistryObject<Block> AQUALITE_ORE = registerBlock("aqualite_ore", () -> new AqualiteOreBlock(AbstractBlock.Properties.of(Material.STONE)
+                    .harvestTool(ToolType.PICKAXE).harvestLevel(2).strength(6.0F, 6.0F)
+            .requiresCorrectToolForDrops().sound(SoundType.STONE)), ModTabs.mythronix);
+
+    public static final RegistryObject<Block> PHYTOLITE_ORE = registerBlock("phytolite_ore", () -> new PhytoliteOreBlock(AbstractBlock.Properties.of(Material.STONE)
+            .harvestTool(ToolType.PICKAXE).harvestLevel(2).strength(6.0F, 6.0F)
+            .requiresCorrectToolForDrops().sound(SoundType.STONE)), ModTabs.mythronix);
+
+    public static final RegistryObject<Block> CRYONITE_ORE = registerBlock("cryonite_ore", () -> new CryoniteOreBlock(AbstractBlock.Properties.of(Material.STONE)
+            .harvestTool(ToolType.PICKAXE).harvestLevel(2).strength(6.0F, 6.0F).
+            requiresCorrectToolForDrops().sound(SoundType.STONE)), ModTabs.mythronix);
+
+    public static final RegistryObject<Block> ARCANITE_ORE = registerBlock("arcanite_ore", () -> new ArcaniteOreBlock(AbstractBlock.Properties.of(Material.STONE)
+            .harvestTool(ToolType.PICKAXE).harvestLevel(2).strength(6.0F, 6.0F)
+            .requiresCorrectToolForDrops().sound(SoundType.STONE)), ModTabs.mythronix);
+
+    public static final RegistryObject<Block> AERONITE_ORE = registerBlock("aeronite_ore", () -> new AeroniteOreBlock(AbstractBlock.Properties.of(Material.STONE)
+            .harvestTool(ToolType.PICKAXE).harvestLevel(2).strength(6.0F, 6.0F)
+            .requiresCorrectToolForDrops().sound(SoundType.STONE)), ModTabs.mythronix);
 
     public static final RegistryObject<Block> LYS_FLOWER = newFlower("lys_flower", ModTabs.mythronix, Effects.GLOWING, 60);
 

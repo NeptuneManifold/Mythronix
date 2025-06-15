@@ -6,7 +6,12 @@ import net.neptune.mythronix.game.blocks.ModBlocks;
 
 public enum OreType {
     MANA(Lazy.of(ModBlocks.MANA_ORE), 4,0,40,3),
-    PYRROTHITE(Lazy.of(ModBlocks.PYRROTHITYE_ORE), 4, 0, 100, 20);
+    PYRROTHITE(Lazy.of(ModBlocks.PYRROTHITYE_ORE), 4, 0, 100, 20),
+    AQUALITE(Lazy.of(ModBlocks.AQUALITE_ORE), 4, 0, 100, 20),
+    PHYTOLITE(Lazy.of(ModBlocks.PHYTOLITE_ORE), 4, 0, 100, 20),
+    CRYONITE(Lazy.of(ModBlocks.CRYONITE_ORE), 4, 0, 100, 20),
+    ARCANITE(Lazy.of(ModBlocks.ARCANITE_ORE), 4, 0, 100, 20),
+    AERONITE(Lazy.of(ModBlocks.AERONITE_ORE), 4, 0, 100, 20);
 
 
     private final Lazy<Block> block;

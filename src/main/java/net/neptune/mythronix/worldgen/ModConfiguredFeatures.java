@@ -85,6 +85,11 @@ public class ModConfiguredFeatures {
                     SimpleBlockPlacer.INSTANCE)).tries(6).build())
             .decorated(Features.Placements.HEIGHTMAP_SQUARE).count(3);
 
+    public static final ConfiguredFeature<?, ?> MANA_ROCK =
+            register("mana_rock", Feature.FOREST_ROCK.configured(new
+                    BlockStateFeatureConfig(ModBlocks.MANA_STONE.get().defaultBlockState()))
+                    .decorated(Features.Placements.HEIGHTMAP_SQUARE).countRandom(2));
+
     private static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(String key, ConfiguredFeature<FC, ?> feature){
         return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, key, feature);
     }

@@ -14,6 +14,7 @@ import net.neptune.mythronix.capability.packets.ModPackets;
 import net.neptune.mythronix.game.ModCapabilities;
 import net.neptune.mythronix.game.blocks.ModBlocks;
 import net.neptune.mythronix.game.blocks.tile.ModTileEntities;
+import net.neptune.mythronix.game.effects.ModEffects;
 import net.neptune.mythronix.game.fluids.ModFluids;
 import net.neptune.mythronix.game.items.ModItems;
 import net.neptune.mythronix.game.recipes.ModRecipeTypes;
@@ -40,6 +41,13 @@ public class Main {
 
     public Main() {
 
+        /** TODO:
+         * Update the patchouli book
+         * make an end biome
+         * create the creatures in the new biomes
+         * build some structures and make feature for the biomes
+        */
+
         GeckoLib.initialize();
 
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -55,6 +63,7 @@ public class Main {
         ModRecipeTypes.register(bus);
         ModContainers.register(bus);
         ModFluids.register(bus);
+        ModEffects.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }

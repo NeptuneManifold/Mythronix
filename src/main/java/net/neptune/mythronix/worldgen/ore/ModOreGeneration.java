@@ -15,17 +15,23 @@ import net.minecraft.world.gen.feature.template.BlockMatchRuleTest;
 import net.minecraft.world.gen.placement.ConfiguredPlacement;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.placement.TopSolidRangeConfig;
+import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.neptune.mythronix.worldgen.biomes.ModBiomes;
 
 import java.util.Arrays;
+import java.util.Set;
 
 
 public class ModOreGeneration {
 
     public static void generateOres(final BiomeLoadingEvent e) {
         spawnOreInSpecificModBiome(ModBiomes.MAGIC_FOREST.get(), OreType.MANA, e, Dimension.OVERWORLD.toString());
+        spawnOreInSpecificModBiome(ModBiomes.SPIRIT_PLAINS.get(), OreType.ARCANITE, e, Dimension.OVERWORLD.toString());
+        spawnOreInSpecificBiomeCat(BiomeDictionary.Type.OCEAN, OreType.AQUALITE, e, Dimension.OVERWORLD.toString());
+        spawnOreInSpecificBiomeCat(BiomeDictionary.Type.PLAINS, OreType.PHYTOLITE, e, Dimension.OVERWORLD.toString());
+        spawnOreInSpecificBiomeCat(BiomeDictionary.Type.COLD, OreType.CRYONITE, e, Dimension.OVERWORLD.toString());
+        spawnOreInSpecificBiomeCat(BiomeDictionary.Type.MOUNTAIN, OreType.AERONITE, e, Dimension.OVERWORLD.toString());
         spawnOreInNetherInAllBiomes(OreType.PYRROTHITE, e);
     }
 
@@ -111,6 +117,17 @@ public class ModOreGeneration {
     private static void spawnOreInSpecificBiome(RegistryKey<Biome> biomeToSpawnIn, OreType currentOreType,
                                                 final BiomeLoadingEvent event, String dimension) {
         if(event.getName().toString().contains(biomeToSpawnIn.location().toString())) {
+            event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, makeOreFeature(currentOreType, dimension));
+        }
+    }
+
+    private static void spawnOreInSpecificBiomeCat(BiomeDictionary.Type biomes, OreType currentOreType,
+                                                   final BiomeLoadingEvent event, String dimension) {
+
+        RegistryKey<Biome> key = RegistryKey.create(Registry.BIOME_REGISTRY, event.getName());
+        Set<BiomeDictionary.Type> types = BiomeDictionary.getTypes(key);
+
+        if(types.contains(biomes)) {
             event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, makeOreFeature(currentOreType, dimension));
         }
     }

@@ -1,4 +1,4 @@
-package net.neptune.mythronix.game.blocks;
+package net.neptune.mythronix.game.blocks.ores;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
