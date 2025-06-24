@@ -7,8 +7,11 @@ import net.minecraft.world.gen.blockplacer.SimpleBlockPlacer;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.foliageplacer.DarkOakFoliagePlacer;
+import net.minecraft.world.gen.placement.ChanceConfig;
 import net.minecraft.world.gen.trunkplacer.DarkOakTrunkPlacer;
 import net.neptune.mythronix.game.blocks.ModBlocks;
+import net.neptune.mythronix.game.fluids.ModFluids;
+import net.neptune.mythronix.worldgen.features.ModPlacements;
 
 import java.util.OptionalInt;
 
@@ -88,7 +91,11 @@ public class ModConfiguredFeatures {
     public static final ConfiguredFeature<?, ?> MANA_ROCK =
             register("mana_rock", Feature.FOREST_ROCK.configured(new
                     BlockStateFeatureConfig(ModBlocks.MANA_STONE.get().defaultBlockState()))
-                    .decorated(Features.Placements.HEIGHTMAP_SQUARE).countRandom(2));
+                    .decorated(Features.Placements.HEIGHTMAP_SQUARE).count(1));
+
+    public static final ConfiguredFeature<?, ?> LAKE_ETHERUM =
+            register("lake_etherum", Feature.LAKE.configured(new BlockStateFeatureConfig(ModFluids.ETHERUM_BLOCK.get().defaultBlockState()))
+                    .decorated(ModPlacements.ETHERUM_LAKE.configured(new ChanceConfig(10))));
 
     private static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(String key, ConfiguredFeature<FC, ?> feature){
         return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, key, feature);

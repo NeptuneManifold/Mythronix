@@ -47,8 +47,13 @@
   "item.mt.arcanite_ingot": "Arcanite Ingot",
   "item.mt.aeronite_ingot": "Aeronite Ingot",
 
-  "item.mt.etherum_buckmt": "Etherum Bucket",
+  "item.mt.boreal_deer_spawn_egg": "Boreal Deer SPawn Egg",
+
+  "item.mt.etherum_bucket": "Etherum Bucket",
   "fluid.mt.etherum": "Etherum",
+
+  "effect.mt.freeze": "Freeze",
+  "effect.mt.mana_boost": "Mana Boost",
 
   "commands.mt.manalevel.add.levels.success.multiple": "Added %s mana levels to %s players",
   "commands.mt.manalevel.add.levels.success.single": "Added %s mana level to %s",

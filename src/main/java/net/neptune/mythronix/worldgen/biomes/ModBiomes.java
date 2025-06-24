@@ -55,11 +55,13 @@ public class ModBiomes {
 
     private static Biome makeSpiritPlains(final Supplier<ConfiguredSurfaceBuilder<?>> surfaceBuilder){
         MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
+        ModBiomeFeatures.spiritPlainsSpawn(mobspawninfo$builder);
 
         BiomeGenerationSettings.Builder biomegenerationsettings$builder = (new BiomeGenerationSettings.Builder()).surfaceBuilder(surfaceBuilder);
         DefaultBiomeFeatures.addDefaultOverworldLandStructures(biomegenerationsettings$builder);
         DefaultBiomeFeatures.addDefaultCarvers(biomegenerationsettings$builder);
         ModBiomeFeatures.addManaStoneBlock(biomegenerationsettings$builder);
+        ModBiomeFeatures.addEtherumLakes(biomegenerationsettings$builder);
         DefaultBiomeFeatures.addDefaultUndergroundVariety(biomegenerationsettings$builder);
         DefaultBiomeFeatures.addDefaultOres(biomegenerationsettings$builder);
         DefaultBiomeFeatures.addDefaultSoftDisks(biomegenerationsettings$builder);

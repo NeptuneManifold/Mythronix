@@ -5,6 +5,7 @@ import net.minecraft.client.renderer.*;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.*;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -15,6 +16,8 @@ import net.neptune.mythronix.game.ModCapabilities;
 import net.neptune.mythronix.game.blocks.ModBlocks;
 import net.neptune.mythronix.game.blocks.tile.ModTileEntities;
 import net.neptune.mythronix.game.effects.ModEffects;
+import net.neptune.mythronix.game.entities.ModEntityTypes;
+import net.neptune.mythronix.game.entities.render.BorealDeerRenderer;
 import net.neptune.mythronix.game.fluids.ModFluids;
 import net.neptune.mythronix.game.items.ModItems;
 import net.neptune.mythronix.game.recipes.ModRecipeTypes;
@@ -22,6 +25,7 @@ import net.neptune.mythronix.game.trees.ModWoodTypes;
 import net.neptune.mythronix.menus.containers.ModContainers;
 import net.neptune.mythronix.menus.screens.ModScreens;
 import net.neptune.mythronix.worldgen.biomes.*;
+import net.neptune.mythronix.worldgen.features.ModPlacements;
 import org.apache.logging.log4j.*;
 import software.bernie.geckolib3.GeckoLib;
 
@@ -43,9 +47,9 @@ public class Main {
 
         /** TODO:
          * Update the patchouli book
-         * make an end biome
+         * Mana
          * create the creatures in the new biomes
-         * build some structures and make feature for the biomes
+         * build some structures and make features for the biomes
         */
 
         GeckoLib.initialize();
@@ -64,6 +68,7 @@ public class Main {
         ModContainers.register(bus);
         ModFluids.register(bus);
         ModEffects.register(bus);
+        ModEntityTypes.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -115,6 +120,8 @@ public class Main {
 
             ModScreens.register();
         });
+
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.BOREAL_DEER.get(), BorealDeerRenderer::new);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent e) {

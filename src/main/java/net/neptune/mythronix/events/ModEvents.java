@@ -1,5 +1,6 @@
 package net.neptune.mythronix.events;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
@@ -57,7 +58,9 @@ public class ModEvents {
     @SubscribeEvent
     public static void onRenderGameOverlay(RenderGameOverlayEvent event) {
         if(event.getType() == RenderGameOverlayEvent.ElementType.ALL){
-            ManaLevelScreen.render(event.getMatrixStack());
+            if(!Minecraft.getInstance().player.isSpectator()){
+                ManaLevelScreen.render(event.getMatrixStack());
+            }
         }
     }
 }

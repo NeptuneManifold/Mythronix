@@ -1,6 +1,5 @@
 package net.neptune.mythronix.game.items;
 
-import net.minecraft.fluid.Fluid;
 import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -9,6 +8,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.neptune.mythronix.Main;
+import net.neptune.mythronix.game.entities.ModEntityTypes;
 import net.neptune.mythronix.game.fluids.ModFluids;
 import net.neptune.mythronix.tabs.ModTabs;
 
@@ -29,6 +29,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> ETHERUM_BUCKET = ITEMS.register("etherum_bucket", () ->
             new BucketItem(() -> ModFluids.ETHERUM_FLUID.get(), new Item.Properties().tab(ModTabs.mythronix).stacksTo(1)));
+
+    public static final RegistryObject<Item> BOREAL_DEER_SPAWN_EGG = ITEMS.register("boreal_deer_spawn_egg", () ->
+            new ModSpawnEggItem(ModEntityTypes.BOREAL_DEER, 0x7400ff, 0x4200ff,
+                    new Item.Properties().stacksTo(64).tab(ModTabs.mythronix)));
 
     public static RegistryObject<Item> newItemBase(String id, ItemGroup tab){
         return ITEMS.register(id, () -> new Item(new Item.Properties().tab(tab)));
