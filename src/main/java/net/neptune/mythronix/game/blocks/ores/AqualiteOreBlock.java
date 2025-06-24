@@ -20,7 +20,7 @@ public class AqualiteOreBlock extends Block {
 
     @Override
     public void playerDestroy(World pLevel, PlayerEntity pPlayer, BlockPos pPos, BlockState pState, @Nullable TileEntity pTe, ItemStack pStack) {
-        pLevel.setBlock(pPos, Blocks.WATER.defaultBlockState(), 32);
-        super.destroy(pLevel, pPos, pState);
+        super.playerDestroy(pLevel, pPlayer, pPos, pState, pTe, pStack);
+        pLevel.setBlock(pPos, Blocks.WATER.defaultBlockState(), 64);
     }
 }

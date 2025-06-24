@@ -21,8 +21,8 @@ public class PhytoliteOreBlock extends Block {
 
     @Override
     public void playerDestroy(World pLevel, PlayerEntity pPlayer, BlockPos pPos, BlockState pState, @Nullable TileEntity pTe, ItemStack pStack) {
-        pLevel.setBlock(pPos, Blocks.OAK_LEAVES.defaultBlockState(), 32);
+        super.playerDestroy(pLevel, pPlayer, pPos, pState, pTe, pStack);
+        pLevel.setBlock(pPos, Blocks.OAK_LEAVES.defaultBlockState(), 64);
         pLevel.addParticle(ParticleTypes.COMPOSTER, pPos.getX(), pPos.getY(), pPos.getZ(), 1,1,1);
-        super.destroy(pLevel, pPos, pState);
     }
 }
