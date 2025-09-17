@@ -89,6 +89,11 @@ public class ModBlocks {
             .harvestTool(ToolType.PICKAXE).harvestLevel(2).strength(6.0F, 6.0F)
             .requiresCorrectToolForDrops().sound(SoundType.STONE)), ModTabs.mythronix);
 
+    public static final RegistryObject<Block> RUBY_ORE = newBlockBase("ruby_ore", ModTabs.mythronix, Material.STONE, 2,
+            ToolType.PICKAXE, 3.0F, 3.0F, SoundType.STONE);
+    public static final RegistryObject<Block> RUBY_BLOCK = newBlockBase("ruby_block", ModTabs.mythronix, Material.METAL,2,
+            ToolType.PICKAXE,3.0F, 3.0F, SoundType.METAL);
+
     public static final RegistryObject<Block> LYS_FLOWER = newFlower("lys_flower", ModTabs.mythronix, Effects.GLOWING, 60);
 
     //geckolib

@@ -7,6 +7,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.neptune.mythronix.Main;
 import net.neptune.mythronix.game.entities.BorealDeerEntity;
+import net.neptune.mythronix.game.entities.CorruptedGolemEntity;
 import net.neptune.mythronix.game.entities.ModEntityTypes;
 import net.neptune.mythronix.game.items.ModSpawnEggItem;
 
@@ -16,6 +17,7 @@ public class ModEventBusEvents {
      @SubscribeEvent
     public static void addEntityAttributes(EntityAttributeCreationEvent e){
          e.put(ModEntityTypes.BOREAL_DEER.get(), BorealDeerEntity.setCustomAttributes().build());
+         e.put(ModEntityTypes.CORRUPTED_GOLEM.get(), CorruptedGolemEntity.setCustomAttributes().build());
      }
 
      @SubscribeEvent

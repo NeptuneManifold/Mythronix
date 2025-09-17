@@ -29,6 +29,9 @@
   "block.mt.cryonite_ore": "Cryonite Ore",
   "block.mt.arcanite_ore": "Arcanite Ore",
   "block.mt.aeronite_ore": "Aeronite Ore",
+  "block.mt.ruby_ore": "Ruby Ore",
+
+  "block.mt.ruby_block": "Ruby Block",
 
   "block.mt.lys_flower": "Lys Flower",
 
@@ -46,8 +49,14 @@
   "item.mt.cryonite_ingot": "Cryonite Ingot",
   "item.mt.arcanite_ingot": "Arcanite Ingot",
   "item.mt.aeronite_ingot": "Aeronite Ingot",
+  "item.mt.ruby": "Ruby",
 
-  "item.mt.boreal_deer_spawn_egg": "Boreal Deer SPawn Egg",
+  "item.mt.boreal_deer_spawn_egg": "Boreal Deer Spawn Egg",
+  "item.mt.corrupted_golem_spawn_egg": "Corrupted Golem Spawn Egg",
+
+  "item.mt.boreal_dust": "Boreal Dust",
+  "item.mt.corrupted_heart": "Corrupted Heart",
+  "item.mt.corrupted_ingot": "Corrupted Ingot",
 
   "item.mt.etherum_bucket": "Etherum Bucket",
   "fluid.mt.etherum": "Etherum",

@@ -18,6 +18,12 @@ public class ModEntityTypes {
                             EntityClassification.CREATURE).sized(0.6F,1.6F)
                             .build(new ResourceLocation(Main.MODID, "boreal_deer").toString()));
 
+    public static final RegistryObject<EntityType<CorruptedGolemEntity>> CORRUPTED_GOLEM =
+            ENTITY_TYPES.register("corrupted_golem",
+                    () -> EntityType.Builder.of(CorruptedGolemEntity::new,
+                            EntityClassification.MONSTER).sized(1.4f, 1.7f)
+                            .build(new ResourceLocation(Main.MODID, "corrupted_golem").toString()));
+
     public static void register(IEventBus bus){
         ENTITY_TYPES.register(bus);
     }

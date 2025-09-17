@@ -11,7 +11,8 @@ public enum OreType {
     PHYTOLITE(Lazy.of(ModBlocks.PHYTOLITE_ORE), 4, 0, 100, 20),
     CRYONITE(Lazy.of(ModBlocks.CRYONITE_ORE), 4, 0, 100, 20),
     ARCANITE(Lazy.of(ModBlocks.ARCANITE_ORE), 4, 0, 100, 20),
-    AERONITE(Lazy.of(ModBlocks.AERONITE_ORE), 4, 0, 100, 20);
+    AERONITE(Lazy.of(ModBlocks.AERONITE_ORE), 4, 0, 100, 20),
+    RUBY(Lazy.of(ModBlocks.RUBY_ORE),4,0,100,20);
 
 
     private final Lazy<Block> block;

@@ -36,7 +36,7 @@ public class BorealDeerEntity extends CreatureEntity implements IAnimatable {
 
     public static AttributeModifierMap.MutableAttribute setCustomAttributes(){
         return MobEntity.createMobAttributes()
-                .add(Attributes.MOVEMENT_SPEED, 0.2D)
+                .add(Attributes.MOVEMENT_SPEED, 0.4D)
                 .add(Attributes.MAX_HEALTH, 20.0F);
     }
 
@@ -99,7 +99,7 @@ public class BorealDeerEntity extends CreatureEntity implements IAnimatable {
 
     @Override
     public void registerControllers(AnimationData data) {
-        data.addAnimationController(new AnimationController<BorealDeerEntity>(this, "controller", 2, this::predicate));
+        data.addAnimationController(new AnimationController<>(this, "controller", 2, this::predicate));
     }
 
     @Override

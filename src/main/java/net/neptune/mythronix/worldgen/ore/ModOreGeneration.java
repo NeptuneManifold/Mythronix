@@ -33,6 +33,7 @@ public class ModOreGeneration {
         spawnOreInSpecificBiomeCat(BiomeDictionary.Type.COLD, OreType.CRYONITE, e, Dimension.OVERWORLD.toString());
         spawnOreInSpecificBiomeCat(BiomeDictionary.Type.MOUNTAIN, OreType.AERONITE, e, Dimension.OVERWORLD.toString());
         spawnOreInNetherInAllBiomes(OreType.PYRROTHITE, e);
+        spawnOreInSpecificModBiome(ModBiomes.SPIRIT_PLAINS.get(), OreType.RUBY, e, Dimension.OVERWORLD.toString());
     }
 
 
