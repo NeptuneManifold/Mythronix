@@ -17,7 +17,7 @@ import net.neptune.mythronix.capability.ManaLevelUtils;
 
 import javax.annotation.Nullable;
 
-public class CorruptedGolemEntity extends IronGolemEntity {
+public class CorruptedGolemEntity extends IronGolemEntity{
 
     public CorruptedGolemEntity(EntityType<? extends IronGolemEntity> entity, World world) {
         super(entity, world);

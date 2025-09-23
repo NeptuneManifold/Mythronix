@@ -1,6 +1,7 @@
 package net.neptune.mythronix;
 
 import net.minecraft.block.WoodType;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.*;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -16,20 +17,22 @@ import net.neptune.mythronix.game.ModCapabilities;
 import net.neptune.mythronix.game.blocks.ModBlocks;
 import net.neptune.mythronix.game.blocks.tile.ModTileEntities;
 import net.neptune.mythronix.game.effects.ModEffects;
-import net.neptune.mythronix.game.entities.CorruptedGolemEntity;
 import net.neptune.mythronix.game.entities.ModEntityTypes;
 import net.neptune.mythronix.game.entities.render.BorealDeerRenderer;
 import net.neptune.mythronix.game.entities.render.CorruptedGolemRenderer;
+import net.neptune.mythronix.game.entities.render.TharvyrnRenderer;
 import net.neptune.mythronix.game.fluids.ModFluids;
 import net.neptune.mythronix.game.items.ModItems;
+import net.neptune.mythronix.game.particles.ModParticles;
 import net.neptune.mythronix.game.recipes.ModRecipeTypes;
 import net.neptune.mythronix.game.trees.ModWoodTypes;
 import net.neptune.mythronix.menus.containers.ModContainers;
 import net.neptune.mythronix.menus.screens.ModScreens;
 import net.neptune.mythronix.worldgen.biomes.*;
-import net.neptune.mythronix.worldgen.features.ModPlacements;
 import org.apache.logging.log4j.*;
 import software.bernie.geckolib3.GeckoLib;
+
+import java.rmi.registry.RegistryHandler;
 
 @Mod(Main.MODID)
 public class Main {
@@ -48,15 +51,19 @@ public class Main {
     public Main() {
 
         /** TODO:
+         * Fix Tharvyrn
+         * tharvyrn Spawn Egg
          * Update the patchouli book
          * Mana
-         * create the creatures in the new biomes
          * build some structures and make features for the biomes
         */
 
         GeckoLib.initialize();
 
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModParticles.register(bus);
+
         bus.addListener(this::setup);
         bus.addListener(this::enqueueIMC);
         bus.addListener(this::processIMC);
@@ -99,6 +106,7 @@ public class Main {
             RenderTypeLookup.setRenderLayer(ModBlocks.WIND_LEAVES.get(), RenderType.cutout());
             RenderTypeLookup.setRenderLayer(ModBlocks.ARCANE_LEAVES.get(), RenderType.cutout());
             RenderTypeLookup.setRenderLayer(ModBlocks.NATURE_LEAVES.get(), RenderType.cutout());
+            RenderTypeLookup.setRenderLayer(ModBlocks.CORRUPTED_LEAVES.get(), RenderType.cutout());
 
             RenderTypeLookup.setRenderLayer(ModBlocks.FIRE_SAPLING.get(), RenderType.cutout());
             RenderTypeLookup.setRenderLayer(ModBlocks.ICE_SAPLING.get(), RenderType.cutout());
@@ -106,6 +114,10 @@ public class Main {
             RenderTypeLookup.setRenderLayer(ModBlocks.WIND_SAPLING.get(), RenderType.cutout());
             RenderTypeLookup.setRenderLayer(ModBlocks.ARCANE_SAPLING.get(), RenderType.cutout());
             RenderTypeLookup.setRenderLayer(ModBlocks.NATURE_SAPLING.get(), RenderType.cutout());
+            RenderTypeLookup.setRenderLayer(ModBlocks.CORRUPTED_SAPLING.get(), RenderType.cutout());
+
+            RenderTypeLookup.setRenderLayer(ModBlocks.CORRUPTED_TRAPDOOR.get(), RenderType.cutout());
+            RenderTypeLookup.setRenderLayer(ModBlocks.CORRUPTED_DOOR.get(), RenderType.cutout());
 
             RenderTypeLookup.setRenderLayer(ModBlocks.LYS_FLOWER.get(), RenderType.cutout());
 
@@ -115,16 +127,22 @@ public class Main {
             Atlases.addWoodType(ModWoodTypes.WIND_WOOD);
             Atlases.addWoodType(ModWoodTypes.WATER_WOOD);
             Atlases.addWoodType(ModWoodTypes.NATURE_WOOD);
+            Atlases.addWoodType(ModWoodTypes.CORRUPTED_WOOD);
 
             RenderTypeLookup.setRenderLayer(ModFluids.ETHERUM_FLUID.get(), RenderType.translucent());
             RenderTypeLookup.setRenderLayer(ModFluids.ETHERUM_BLOCK.get(), RenderType.translucent());
             RenderTypeLookup.setRenderLayer(ModFluids.ETHERUM_FLOWING.get(), RenderType.translucent());
+
+            RenderTypeLookup.setRenderLayer(ModBlocks.CORRUPTED_TORCH.get(), RenderType.cutout());
+            RenderTypeLookup.setRenderLayer(ModBlocks.CORRUPTED_TORCH_WALL.get(), RenderType.cutout());
+            RenderTypeLookup.setRenderLayer(ModBlocks.CORRUPTED_LANTERN.get(), RenderType.cutout());
 
             ModScreens.register();
         });
 
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.BOREAL_DEER.get(), BorealDeerRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.CORRUPTED_GOLEM.get(), CorruptedGolemRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.THARVYRN.get(), TharvyrnRenderer::new);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent e) {

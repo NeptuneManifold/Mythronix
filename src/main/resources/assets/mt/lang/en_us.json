@@ -7,6 +7,9 @@
   "block.mt.water_log": "Water Log",
   "block.mt.wind_log": "Wind Log",
   "block.mt.nature_log": "Nature Log",
+  "block.mt.corrupted_log": "Corrupted Log",
+
+  "block.mt.corrupted_wood": "Corrupted Wood",
 
   "block.mt.fire_leaves": "Fire Leaves",
   "block.mt.ice_leaves": "Ice Leaves",
@@ -14,6 +17,7 @@
   "block.mt.water_leaves": "Water Leaves",
   "block.mt.wind_leaves": "Wind Leaves",
   "block.mt.nature_leaves": "Nature Leaves",
+  "block.mt.corrupted_leaves": "Corrupted Leaves",
 
   "block.mt.fire_sapling": "Fire Sapling",
   "block.mt.ice_sapling": "Ice Sapling",
@@ -21,6 +25,40 @@
   "block.mt.water_sapling": "Water Sapling",
   "block.mt.wind_sapling": "Wind Sapling",
   "block.mt.nature_sapling": "Nature Sapling",
+  "block.mt.corrupted_sapling": "Corrupted Sapling",
+
+  "block.mt.corrupted_bricks": "Corrupted Bricks",
+  "block.mt.chiseled_corrupted_bricks": "Chiseled Corrupted Bricks",
+  "block.mt.mossy_corrupted_bricks": "Mossy Corrupted Bricks",
+  "block.mt.cracked_corrupted_bricks": "Cracked Corrupted Bricks",
+
+  "block.mt.corrupted_slab": "Corrupted Slab",
+  "block.mt.corrupted_bricks_slab": "Corrupted bricks Slab",
+
+  "block.mt.corrupted_bricks_wall": "Corrupted bricks Wall",
+
+  "block.mt.corrupted_stairs": "Corrupted Stairs",
+  "block.mt.corrupted_bricks_stairs": "Corrupted Bricks Stairs",
+
+  "block.mt.corrupted_torch": "Corrupted Torch",
+
+  "block.mt.corrupted_lantern": "Corrupted Lantern",
+
+  "block.mt.corrupted_button": "Corrupted Button",
+
+  "block.mt.corrupted_door": "Corrupted Door",
+
+  "block.mt.corrupted_trapdoor": "Corrupted trapdoor",
+
+  "block.mt.corrupted_fence": "Corrupted Fence",
+
+  "block.mt.corrupted_fence_gate": "Corrupted Fence Gate",
+
+  "block.mt.corrupted_pressure_plate": "Corrupted Pressure Plate",
+
+  "block.mt.corrupted_planks": "Corrupted Planks",
+
+  "block.mt.corrupted_bookshelf": "Corrupted Bookshelf",
 
   "block.mt.mana_ore": "Mana Ore",
   "block.mt.pyrrothite_ore": "Pyrrothite Ore",
@@ -39,6 +77,9 @@
   "block.mt.mana_cobblestone": "Mana Cobblestone",
 
   "block.mt.purifier": "Purifier",
+
+  "block.mt.corrupter_altar": "Corrupter Altar",
+  "block.mt.magical_wall": "Magical Wall",
 
   "item.mt.magic_stick": "Magic Stick",
   "item.mt.impure_mana": "Impure Mana",
@@ -70,6 +111,10 @@
   "commands.mt.manalevel.add.xp.success.single": "Added %s mana XP to %s",
   "commands.mt.manalevel.get.levels.success": "Level = %s",
   "commands.mt.manalevel.get.xp.success": "Level = %s",
+
+  "entity.mt.corrupted_golem": "Corrupted Golem",
+  "entity.mt.boreal_deer": "Boreal Deer",
+  "entity.mt.tharvyrn": "Tharvyrn",
 
   "screen.mt.purifier": "Purifier",
 

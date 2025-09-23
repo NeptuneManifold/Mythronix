@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "mt:block/corrupted_bricks_slab"
+    },
+    "type=double": {
+      "model": "mt:block/corrupted_bricks"
+    },
+    "type=top": {
+      "model": "mt:block/corrupted_bricks_slab_top"
+    }
+  }
+}

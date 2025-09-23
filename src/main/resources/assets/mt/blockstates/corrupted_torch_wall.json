@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "mt:block/corrupted_torch_wall"
+    },
+    "facing=north": {
+      "model": "mt:block/corrupted_torch_wall",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "mt:block/corrupted_torch_wall",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "mt:block/corrupted_torch_wall",
+      "y": 180
+    }
+  }
+}

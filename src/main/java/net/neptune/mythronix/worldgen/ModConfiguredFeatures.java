@@ -6,9 +6,11 @@ import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.gen.blockplacer.SimpleBlockPlacer;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
 import net.minecraft.world.gen.foliageplacer.DarkOakFoliagePlacer;
 import net.minecraft.world.gen.placement.ChanceConfig;
 import net.minecraft.world.gen.trunkplacer.DarkOakTrunkPlacer;
+import net.minecraft.world.gen.trunkplacer.StraightTrunkPlacer;
 import net.neptune.mythronix.game.blocks.ModBlocks;
 import net.neptune.mythronix.game.fluids.ModFluids;
 import net.neptune.mythronix.worldgen.features.ModPlacements;
@@ -24,6 +26,17 @@ public class ModConfiguredFeatures {
                             new DarkOakFoliagePlacer(FeatureSpread.fixed(1), FeatureSpread.fixed(1)),
                             new DarkOakTrunkPlacer(6,2,1),
                             new ThreeLayerFeature(1,1,0,1,2, OptionalInt.empty())))
+                    .maxWaterDepth(Integer.MAX_VALUE).heightmap(Heightmap.Type.MOTION_BLOCKING)
+                    .ignoreVines().build()
+            ));
+    public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> CORRUPTED_TREE =
+            register("corrupted_tree", Feature.TREE.configured((
+                    new BaseTreeFeatureConfig.Builder(
+                            new SimpleBlockStateProvider(ModBlocks.CORRUPTED_LOG.get().defaultBlockState()),
+                            new SimpleBlockStateProvider(ModBlocks.CORRUPTED_LEAVES.get().defaultBlockState()),
+                            new BlobFoliagePlacer(FeatureSpread.fixed(3), FeatureSpread.fixed(2), 3),
+                            new StraightTrunkPlacer(3,2,1),
+                            new TwoLayerFeature(1,1,1, OptionalInt.empty())))
                     .maxWaterDepth(Integer.MAX_VALUE).heightmap(Heightmap.Type.MOTION_BLOCKING)
                     .ignoreVines().build()
             ));

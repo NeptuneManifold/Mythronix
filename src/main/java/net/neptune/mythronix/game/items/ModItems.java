@@ -3,13 +3,16 @@ package net.neptune.mythronix.game.items;
 import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.WallOrFloorItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.neptune.mythronix.Main;
+import net.neptune.mythronix.game.blocks.ModBlocks;
 import net.neptune.mythronix.game.entities.ModEntityTypes;
 import net.neptune.mythronix.game.fluids.ModFluids;
+import net.neptune.mythronix.game.items.corrupted.CorruptedSwordItem;
 import net.neptune.mythronix.tabs.ModTabs;
 
 public class ModItems {
@@ -30,6 +33,13 @@ public class ModItems {
     public static final RegistryObject<Item> CRYONITE_INGOT = newItemBase("cryonite_ingot", ModTabs.mythronix);
     public static final RegistryObject<Item> ACANITE_INGOT = newItemBase("arcanite_ingot", ModTabs.mythronix);
     public static final RegistryObject<Item> AERONITE_INGOT = newItemBase("aeronite_ingot", ModTabs.mythronix);
+
+    public static final RegistryObject<Item> CORRUPTER_HEART = newItemBase("corrupter_heart", ModTabs.mythronix);
+
+    public static final RegistryObject<Item> CORRUPTED_TORCH_ITEM = ITEMS.register("corrupted_torch_item", () ->
+            new WallOrFloorItem(ModBlocks.CORRUPTED_TORCH.get(), ModBlocks.CORRUPTED_TORCH_WALL.get(), new Item.Properties().tab(ModTabs.mythronix)));
+
+    public static final RegistryObject<Item> CORRUPTED_SWORD = ITEMS.register("corrupted_sword", () -> new CorruptedSwordItem());
 
     public static final RegistryObject<Item> RUBY = newItemBase("ruby", ModTabs.mythronix);
 

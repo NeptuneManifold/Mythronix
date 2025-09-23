@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "mt:block/corrupted_bricks",
+    "top": "mt:block/corrupted_bricks",
+    "side": "mt:block/corrupted_bricks"
+  }
+}

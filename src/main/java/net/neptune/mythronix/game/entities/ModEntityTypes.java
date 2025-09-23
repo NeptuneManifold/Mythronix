@@ -24,6 +24,12 @@ public class ModEntityTypes {
                             EntityClassification.MONSTER).sized(1.4f, 1.7f)
                             .build(new ResourceLocation(Main.MODID, "corrupted_golem").toString()));
 
+    public static final RegistryObject<EntityType<TharvyrnEntity>> THARVYRN =
+            ENTITY_TYPES.register("tharvyrn",
+                    () -> EntityType.Builder.of(TharvyrnEntity::new,
+                            EntityClassification.MONSTER).sized(1F,0.3F)
+                            .build(new ResourceLocation(Main.MODID, "tharvyrn").toString()));
+
     public static void register(IEventBus bus){
         ENTITY_TYPES.register(bus);
     }

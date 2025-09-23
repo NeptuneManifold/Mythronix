@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_door",
+  "pattern": [
+    " p ",
+    " b ",
+    "bbb"
+  ],
+  "key": {
+    "b": {
+      "item": "mt:corrupted_bricks"
+    },
+    "p": {
+      "item": "mt:corrupted_planks"
+    }
+  },
+  "result": {
+    "item": "mt:corrupter_altar",
+    "count": 1
+  }
+}

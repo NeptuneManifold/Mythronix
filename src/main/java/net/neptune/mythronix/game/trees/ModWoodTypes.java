@@ -11,4 +11,5 @@ public class ModWoodTypes {
     public static final WoodType WIND_WOOD = WoodType.create(new ResourceLocation(Main.MODID, "wind_tree").toString());
     public static final WoodType ARCANE_WOOD = WoodType.create(new ResourceLocation(Main.MODID, "arcane_tree").toString());
     public static final WoodType NATURE_WOOD = WoodType.create(new ResourceLocation(Main.MODID, "nature_tree").toString());
+    public static final WoodType CORRUPTED_WOOD = WoodType.create(new ResourceLocation(Main.MODID, "corrupted_tree").toString());
 }

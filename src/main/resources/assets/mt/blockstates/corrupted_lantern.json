@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "mt:block/corrupted_lantern"
+    },
+    "hanging=true": {
+      "model": "mt:block/corrupted_lantern_hanging"
+    }
+  }
+}

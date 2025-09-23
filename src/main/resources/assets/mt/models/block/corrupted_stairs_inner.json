@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "mt:block/corrupted_planks",
+    "top": "mt:block/corrupted_planks",
+    "side": "mt:block/corrupted_planks"
+  }
+}

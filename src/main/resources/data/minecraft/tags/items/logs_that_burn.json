@@ -6,6 +6,7 @@
     "mt:nature_log",
     "mt:wind_log",
     "mt:water_log",
-    "mt:arcane_log"
+    "mt:arcane_log",
+    "mt:corrupted_log"
   ]
 }

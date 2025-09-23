@@ -1,0 +1,123 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "couverture",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "Gauche",
+					"parent": "couverture",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-9.51594, 0.19185, -8], "size": [10, 1, 16], "pivot": [-1.7, 1, 1], "rotation": [0, 0, 7.5], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "Droite",
+					"parent": "couverture",
+					"pivot": [1, 1, 0],
+					"cubes": [
+						{"origin": [0.24867, 0.04421, -8], "size": [10, 1, 16], "pivot": [1.3, 0.82737, 1], "rotation": [0, 0, -7.5], "uv": [0, 17]}
+					]
+				},
+				{
+					"name": "Mid",
+					"parent": "couverture",
+					"pivot": [6.8, -0.17263, 0],
+					"cubes": [
+						{"origin": [-0.5, -0.17263, -8.1], "size": [1.6, 1, 16.2], "uv": [0, 76]}
+					]
+				},
+				{
+					"name": "pages",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "Droite2",
+					"parent": "pages",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "Page 1",
+					"parent": "Droite2",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [0.11508, 2.76949, -7], "size": [9, 0.5, 14], "pivot": [7.11508, 2.26949, 0], "rotation": [0, 0, -15], "uv": [0, 48]}
+					]
+				},
+				{
+					"name": "Page 2",
+					"parent": "Droite2",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-0.11732, 3.65757, -7], "size": [9, 0.5, 14], "pivot": [6.88268, 3.15757, 0], "rotation": [0, 0, -22.5], "uv": [46, 34]}
+					]
+				},
+				{
+					"name": "Page 3",
+					"parent": "Droite2",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-0.46364, 4.50771, -7], "size": [9, 0.5, 14], "pivot": [6.53636, 4.00771, 0], "rotation": [0, 0, -30], "uv": [52, 14]}
+					]
+				},
+				{
+					"name": "Page 4",
+					"parent": "Droite2",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-0.91796, 5.30538, -7], "size": [9, 0.5, 14], "pivot": [6.08204, 4.80538, 0], "rotation": [0, 0, -37.5], "uv": [46, 62]}
+					]
+				},
+				{
+					"name": "Gauche2",
+					"parent": "pages",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "Page_2",
+					"parent": "Gauche2",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-9.5, -1.7, -7], "size": [9, 0.5, 14], "pivot": [6.5, -2.2, 0], "rotation": [0, 0, 22.5], "uv": [0, 34]}
+					]
+				},
+				{
+					"name": "Page_3",
+					"parent": "Gauche2",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-9.96364, -2.49229, -7], "size": [9, 0.5, 14], "pivot": [6.03636, -2.99229, 0], "rotation": [0, 0, 30], "uv": [52, 0]}
+					]
+				},
+				{
+					"name": "Page_1",
+					"parent": "Gauche2",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-9.14374, -0.85397, -7], "size": [9, 0.5, 14], "pivot": [6.85626, -1.35397, 0], "rotation": [0, 0, 15], "uv": [46, 48]}
+					]
+				},
+				{
+					"name": "Page_4",
+					"parent": "Gauche2",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-10.52672, -3.21728, -7], "size": [9, 0.5, 14], "pivot": [5.47328, -3.71728, 0], "rotation": [0, 0, 37.5], "uv": [0, 62]}
+					]
+				}
+			]
+		}
+	]
+}

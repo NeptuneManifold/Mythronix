@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "mt:block/corrupter_altar",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "mt:block/corrupter_altar"
+    },
+    "facing=south": {
+      "model": "mt:block/corrupter_altar",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "mt:block/corrupter_altar",
+      "y": 270
+    }
+  }
+}
