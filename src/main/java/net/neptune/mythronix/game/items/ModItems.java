@@ -1,9 +1,6 @@
 package net.neptune.mythronix.game.items;
 
-import net.minecraft.item.BucketItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.WallOrFloorItem;
+import net.minecraft.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -12,7 +9,6 @@ import net.neptune.mythronix.Main;
 import net.neptune.mythronix.game.blocks.ModBlocks;
 import net.neptune.mythronix.game.entities.ModEntityTypes;
 import net.neptune.mythronix.game.fluids.ModFluids;
-import net.neptune.mythronix.game.items.corrupted.CorruptedSwordItem;
 import net.neptune.mythronix.tabs.ModTabs;
 
 public class ModItems {
@@ -35,11 +31,27 @@ public class ModItems {
     public static final RegistryObject<Item> AERONITE_INGOT = newItemBase("aeronite_ingot", ModTabs.mythronix);
 
     public static final RegistryObject<Item> CORRUPTER_HEART = newItemBase("corrupter_heart", ModTabs.mythronix);
+    public static final RegistryObject<Item> CORRUPTER_KEY = newItemBase("corrupter_key", ModTabs.mythronix);
 
     public static final RegistryObject<Item> CORRUPTED_TORCH_ITEM = ITEMS.register("corrupted_torch_item", () ->
             new WallOrFloorItem(ModBlocks.CORRUPTED_TORCH.get(), ModBlocks.CORRUPTED_TORCH_WALL.get(), new Item.Properties().tab(ModTabs.mythronix)));
 
-    public static final RegistryObject<Item> CORRUPTED_SWORD = ITEMS.register("corrupted_sword", () -> new CorruptedSwordItem());
+    public static final RegistryObject<Item> CORRUPTED_SWORD = ITEMS.register("corrupted_sword", () -> new SwordItem(ModItemTier.CORRUPTED,
+            0,0f, new Item.Properties().tab(ModTabs.mythronix).stacksTo(1)));
+
+    public static final RegistryObject<Item> CORRUPTED_PICKAXE = ITEMS.register("corrupted_pickaxe", () -> new PickaxeItem(ModItemTier.CORRUPTED,
+            0,0f, new Item.Properties().tab(ModTabs.mythronix).stacksTo(1)));
+
+    public static final RegistryObject<Item> CORRUPTED_HOE = ITEMS.register("corrupted_hoe", () -> new HoeItem(ModItemTier.CORRUPTED,
+            0,0f, new Item.Properties().tab(ModTabs.mythronix).stacksTo(1)));
+
+    public static final RegistryObject<Item> CORRUPTED_SHOVEL = ITEMS.register("corrupted_shovel", () -> new ShovelItem(ModItemTier.CORRUPTED,
+            0,0f, new Item.Properties().tab(ModTabs.mythronix).stacksTo(1)));
+
+    public static final RegistryObject<Item> CORRUPTED_AXE = ITEMS.register("corrupted_axe", () -> new AxeItem(ModItemTier.CORRUPTED,
+            0,0f, new Item.Properties().tab(ModTabs.mythronix).stacksTo(1)));
+
+    public static final RegistryObject<Item> SWORD_OF_LIFE = ITEMS.register("sword_of_life", () -> new SwordOfLifeItem());
 
     public static final RegistryObject<Item> RUBY = newItemBase("ruby", ModTabs.mythronix);
 
@@ -52,6 +64,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> CORRUPTED_GOLEM_SPAWN_EGG = ITEMS.register("corrupted_golem_spawn_egg", () ->
             new ModSpawnEggItem(ModEntityTypes.CORRUPTED_GOLEM, 0x5200A3 ,0xD9D9D9,
+                    new Item.Properties().stacksTo(64).tab(ModTabs.mythronix)));
+
+    public static final RegistryObject<Item> THARVYRN_SPAWN_EGG = ITEMS.register("tharvyrn_spawn_egg", () ->
+            new ModSpawnEggItem(ModEntityTypes.THARVYRN, 0x94321F ,0xFFFFFF,
                     new Item.Properties().stacksTo(64).tab(ModTabs.mythronix)));
 
     public static RegistryObject<Item> newItemBase(String id, ItemGroup tab){

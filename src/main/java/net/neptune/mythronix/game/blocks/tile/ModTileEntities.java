@@ -20,6 +20,10 @@ public class ModTileEntities {
             TILE_ENTITIES.register("corrupter_statue_tile", () -> TileEntityType.Builder.of(
                     CorrupterStatueTile::new, ModBlocks.CORRUPTER_STATUE.get()).build(null));
 
+    public static final RegistryObject<TileEntityType<CorrupterDoorTile>> CORRUPTER_DOOR_TILE =
+            TILE_ENTITIES.register("corrupter_door_tile", () -> TileEntityType.Builder.of(
+                    CorrupterDoorTile::new, ModBlocks.CORRUPTER_DOOR.get()).build(null));
+
     public static void register(IEventBus bus){
         TILE_ENTITIES.register(bus);
     }

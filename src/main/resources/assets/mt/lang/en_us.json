@@ -94,6 +94,18 @@
 
   "item.mt.boreal_deer_spawn_egg": "Boreal Deer Spawn Egg",
   "item.mt.corrupted_golem_spawn_egg": "Corrupted Golem Spawn Egg",
+  "item.mt.tharvyrn_spawn_egg": "Tharvyrn Spawn Egg",
+
+  "death.attack.corruption": "%s has succumbed to the corruption",
+
+  "item.mt.corrupted_axe": "Corrupted Axe",
+  "item.mt.corrupted_pickaxe": "Corrupted Pickaxe",
+  "item.mt.corrupted_sword": "Corrupted Sword",
+  "item.mt.corrupted_shovel": "Corrupted Shovel",
+  "item.mt.corrupted_hoe": "Corrupted hoe",
+  "item.mt.sword_of_life": "Sword of Life",
+  "item.mt.corrupter_heart": "Corrupter Heart",
+  "item.mt.corrupter_key": "Corrupter key",
 
   "item.mt.boreal_dust": "Boreal Dust",
   "item.mt.corrupted_heart": "Corrupted Heart",
@@ -104,6 +116,7 @@
 
   "effect.mt.freeze": "Freeze",
   "effect.mt.mana_boost": "Mana Boost",
+  "effect.mt.corruption": "Corruption",
 
   "commands.mt.manalevel.add.levels.success.multiple": "Added %s mana levels to %s players",
   "commands.mt.manalevel.add.levels.success.single": "Added %s mana level to %s",
@@ -115,6 +128,7 @@
   "entity.mt.corrupted_golem": "Corrupted Golem",
   "entity.mt.boreal_deer": "Boreal Deer",
   "entity.mt.tharvyrn": "Tharvyrn",
+  "entity.mt.corrupter": "Corrupter",
 
   "screen.mt.purifier": "Purifier",
 

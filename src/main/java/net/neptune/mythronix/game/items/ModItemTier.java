@@ -8,7 +8,9 @@ import java.util.function.Supplier;
 
 public enum ModItemTier implements IItemTier {
 
-    CORRUPTED(0,-1, 0f, 12f, 10, () -> Ingredient.EMPTY);
+    CORRUPTED(0,100, 0f, 0f, 0, () -> Ingredient.EMPTY),
+    LIFE(1, 300, 2f, 8f,10,
+                 () -> Ingredient.of(ModItems.BOREAL_DUST.get()));
 
     private final int harvestLevel;
     private final int maxUses;

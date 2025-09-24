@@ -44,7 +44,6 @@ public class CorruptedGolemEntity extends IronGolemEntity{
 
     @Override
     protected int getExperienceReward(PlayerEntity pPlayer) {
-        ManaLevelUtils.addManaXp(pPlayer, 1);
         return 5 + this.level.random.nextInt(10);
     }
 

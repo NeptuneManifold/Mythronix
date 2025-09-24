@@ -20,6 +20,7 @@ import net.neptune.mythronix.game.effects.ModEffects;
 import net.neptune.mythronix.game.entities.ModEntityTypes;
 import net.neptune.mythronix.game.entities.render.BorealDeerRenderer;
 import net.neptune.mythronix.game.entities.render.CorruptedGolemRenderer;
+import net.neptune.mythronix.game.entities.render.CorrupterRenderer;
 import net.neptune.mythronix.game.entities.render.TharvyrnRenderer;
 import net.neptune.mythronix.game.fluids.ModFluids;
 import net.neptune.mythronix.game.items.ModItems;
@@ -143,6 +144,7 @@ public class Main {
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.BOREAL_DEER.get(), BorealDeerRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.CORRUPTED_GOLEM.get(), CorruptedGolemRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.THARVYRN.get(), TharvyrnRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.CORRUPTER.get(), CorrupterRenderer::new);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent e) {

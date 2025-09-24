@@ -13,9 +13,11 @@ public class ModEffects {
     public static final DeferredRegister<Effect> EFFECTS = DeferredRegister.create(ForgeRegistries.POTIONS, Main.MODID);
 
     public static final RegistryObject<Effect> FREEZE = EFFECTS.register("freeze", () -> new FreezeEffect()
-            .addAttributeModifier(Attributes.MOVEMENT_SPEED, "7107DE5E-7CE8-4030-940E-514C1F160890", (double) -0.25, AttributeModifier.Operation.MULTIPLY_TOTAL));
+            .addAttributeModifier(Attributes.MOVEMENT_SPEED, "7107DE5E-7CE8-4030-940E-514C1F160890", -0.25D, AttributeModifier.Operation.MULTIPLY_TOTAL));
 
     public static final RegistryObject<Effect> MANA_BOOST = EFFECTS.register("mana_boost", () -> new ManaBoostEffect());
+
+    public static final RegistryObject<Effect> CORRUPTION = EFFECTS.register("corruption", () -> new CorruptionEffect());
 
     public static void register(IEventBus bus){
         EFFECTS.register(bus);

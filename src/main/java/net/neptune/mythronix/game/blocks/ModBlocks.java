@@ -17,6 +17,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.neptune.mythronix.Main;
 import net.neptune.mythronix.game.blocks.deco.CorrupterAltarBlock;
+import net.neptune.mythronix.game.blocks.geckolib.CorrupterDoor;
 import net.neptune.mythronix.game.blocks.geckolib.CorrupterStatue;
 import net.neptune.mythronix.game.blocks.geckolib.PurifierBlock;
 import net.neptune.mythronix.game.blocks.ores.*;
@@ -157,7 +158,8 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> PURIFIER = registerBlock("purifier", () -> new PurifierBlock(), ModTabs.mythronix);
 
-    public static final RegistryObject<Block> CORRUPTER_STATUE = registerBlock("corrupter_statue", () -> new CorrupterStatue(), ModTabs.mythronix);
+    public static final RegistryObject<Block> CORRUPTER_STATUE = registerBlocknoitem("corrupter_statue", () -> new CorrupterStatue());
+    public static final RegistryObject<Block> CORRUPTER_DOOR = registerBlocknoitem("corrupter_door", () -> new CorrupterDoor());
 
     public static final RegistryObject<Block> CORRUPTER_ALTAR = registerBlock("corrupter_altar", () -> new CorrupterAltarBlock(), ModTabs.mythronix);
 

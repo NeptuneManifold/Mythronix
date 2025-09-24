@@ -3,8 +3,6 @@ package net.neptune.mythronix.game.blocks.geckolib;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -15,15 +13,9 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.network.NetworkHooks;
 import net.neptune.mythronix.game.blocks.tile.CorrupterStatueTile;
 import net.neptune.mythronix.game.blocks.tile.ModTileEntities;
-import net.neptune.mythronix.game.blocks.tile.PurifierTile;
 import net.neptune.mythronix.game.items.ModItems;
-import software.bernie.geckolib3.core.IAnimatable;
-import software.bernie.geckolib3.core.manager.AnimationData;
-import software.bernie.geckolib3.core.manager.AnimationFactory;
-import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import javax.annotation.Nullable;
 
@@ -32,7 +24,6 @@ public class CorrupterStatue extends Block {
     public CorrupterStatue() {
         super(AbstractBlock.Properties.of(Material.STONE).strength(-1, 1600000).noOcclusion().noDrops().sound(SoundType.STONE));
     }
-
 
     @Override
     public boolean hasTileEntity(BlockState state) {
@@ -55,13 +46,11 @@ public class CorrupterStatue extends Block {
         if(!pLevel.isClientSide) {
             TileEntity tileEntity = pLevel.getBlockEntity(pPos);
 
-            System.out.println(tileEntity);
-
             if(tileEntity instanceof CorrupterStatueTile){
                 if(pPlayer.getItemInHand(pHand).getItem().equals(ModItems.CORRUPTER_HEART.get())){
-                    System.out.println("c ok");
 
-                    CorrupterStatueTile.goodItem = true;
+                    ((CorrupterStatueTile) tileEntity).setGoodItem(true);
+                    tileEntity.setChanged();
                 }
             } else {
                 throw new IllegalStateException("Blem avec la statue dev de merde");

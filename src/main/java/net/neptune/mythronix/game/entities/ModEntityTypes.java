@@ -30,6 +30,12 @@ public class ModEntityTypes {
                             EntityClassification.MONSTER).sized(1F,0.3F)
                             .build(new ResourceLocation(Main.MODID, "tharvyrn").toString()));
 
+    public static final RegistryObject<EntityType<CorrupterEntity>> CORRUPTER =
+            ENTITY_TYPES.register("corrupter",
+                    () -> EntityType.Builder.of(CorrupterEntity::new,
+                            EntityClassification.MONSTER).sized(1f,3f)
+                            .build(new ResourceLocation(Main.MODID, "corrupter").toString()));
+
     public static void register(IEventBus bus){
         ENTITY_TYPES.register(bus);
     }

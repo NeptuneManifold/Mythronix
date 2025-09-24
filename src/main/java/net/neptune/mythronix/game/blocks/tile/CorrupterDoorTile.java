@@ -1,8 +1,6 @@
 package net.neptune.mythronix.game.blocks.tile;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.client.renderer.texture.ITickable;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
@@ -21,21 +19,18 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
 
-import javax.annotation.Nullable;
-
-public class CorrupterStatueTile extends TileEntity implements IAnimatable, ITickableTileEntity {
-
+public class CorrupterDoorTile extends TileEntity implements ITickableTileEntity, IAnimatable {
     private boolean goodItem;
     private int anim;
 
     private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
-    public CorrupterStatueTile(TileEntityType<?> tileEntityType) {
+    public CorrupterDoorTile(TileEntityType<?> tileEntityType) {
         super(tileEntityType);
     }
 
-    public CorrupterStatueTile() {
-        this(ModTileEntities.CORRUPTER_STATUE_TILE.get());
+    public CorrupterDoorTile() {
+        this(ModTileEntities.CORRUPTER_DOOR_TILE.get());
     }
 
     public boolean isGoodItem() {
@@ -80,10 +75,10 @@ public class CorrupterStatueTile extends TileEntity implements IAnimatable, ITic
     }
 
     public void registerControllers(AnimationData animationData) {
-        animationData.addAnimationController(new AnimationController<CorrupterStatueTile>(this,"controller",0,this::predicate));
+        animationData.addAnimationController(new AnimationController<CorrupterDoorTile>(this,"controller",0,this::predicate));
     }
 
-    private PlayState predicate(AnimationEvent<CorrupterStatueTile> e) {
+    private PlayState predicate(AnimationEvent<CorrupterDoorTile> e) {
         if(isGoodItem()){
             e.getController().setAnimation(new AnimationBuilder().addAnimation("animation.corrupter_statue.revive", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME));
         }
@@ -101,13 +96,8 @@ public class CorrupterStatueTile extends TileEntity implements IAnimatable, ITic
     @Override
     public void tick() {
         if(isGoodItem()){
-            if(this.anim >= 70){
+            if(this.anim >= 40){
                 this.getLevel().destroyBlock(this.getBlockPos(), false);
-                CorrupterEntity entity = new CorrupterEntity(ModEntityTypes.CORRUPTER.get(), this.getLevel());
-                entity.setPersistenceRequired();
-                entity.setPos(this.getBlockPos().getX(), this.getBlockPos().getY(), this.getBlockPos().getZ());
-
-                this.level.addFreshEntity(entity);
             }
 
             this.anim++;
