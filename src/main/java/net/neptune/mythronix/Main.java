@@ -53,7 +53,6 @@ public class Main {
 
         /** TODO:
          * Fix Tharvyrn
-         * tharvyrn Spawn Egg
          * Update the patchouli book
          * Mana
          * build some structures and make features for the biomes

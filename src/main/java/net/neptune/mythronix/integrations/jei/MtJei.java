@@ -10,7 +10,9 @@ import net.minecraft.util.ResourceLocation;
 import net.neptune.mythronix.Main;
 import net.neptune.mythronix.game.recipes.ModRecipeTypes;
 import net.neptune.mythronix.game.recipes.types.PurifierRecipe;
+import net.neptune.mythronix.game.recipes.types.UnCorrupterRecipe;
 import net.neptune.mythronix.integrations.jei.categories.PurifierRecipeCategory;
+import net.neptune.mythronix.integrations.jei.categories.UnCorrupterRecipeCategory;
 
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -24,8 +26,12 @@ public class MtJei implements IModPlugin {
 
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
+
         registration.addRecipeCategories(
                 new PurifierRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+
+        registration.addRecipeCategories(
+                new UnCorrupterRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
     }
 
     @Override
@@ -33,5 +39,8 @@ public class MtJei implements IModPlugin {
         RecipeManager rm = Objects.requireNonNull(Minecraft.getInstance().level).getRecipeManager();
         registration.addRecipes(rm.getAllRecipesFor(ModRecipeTypes.PURIFIER_RECIPE).stream().filter(r ->
                 r instanceof PurifierRecipe).collect(Collectors.toList()), PurifierRecipeCategory.UID);
+
+        registration.addRecipes(rm.getAllRecipesFor(ModRecipeTypes.UNCORRUPTER_RECIPE).stream().filter(r ->
+                r instanceof UnCorrupterRecipe).collect(Collectors.toList()), UnCorrupterRecipeCategory.UID);
     }
 }

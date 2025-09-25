@@ -24,6 +24,10 @@ public class ModTileEntities {
             TILE_ENTITIES.register("corrupter_door_tile", () -> TileEntityType.Builder.of(
                     CorrupterDoorTile::new, ModBlocks.CORRUPTER_DOOR.get()).build(null));
 
+    public static final RegistryObject<TileEntityType<UnCorrupterTile>> UNCORRUPTER_TILE =
+            TILE_ENTITIES.register("uncorrupter_tile", () -> TileEntityType.Builder.of(
+                    UnCorrupterTile::new, ModBlocks.UNCCORUPTER_CATALYSER.get()).build(null));
+
     public static void register(IEventBus bus){
         TILE_ENTITIES.register(bus);
     }

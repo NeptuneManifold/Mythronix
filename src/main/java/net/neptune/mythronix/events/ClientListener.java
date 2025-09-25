@@ -1,22 +1,16 @@
 package net.neptune.mythronix.events;
 
-import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.FlameParticle;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
-import net.minecraftforge.client.event.RenderGameOverlayEvent;
-import net.minecraftforge.client.gui.ForgeIngameGui;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neptune.mythronix.Main;
-import net.neptune.mythronix.game.blocks.geckolib.render.CorrupterDoorRenderer;
-import net.neptune.mythronix.game.blocks.geckolib.render.CorrupterStatueRenderer;
-import net.neptune.mythronix.game.blocks.geckolib.render.PurifierRenderer;
+import net.neptune.mythronix.game.blocks.geckolib.render.*;
 import net.neptune.mythronix.game.blocks.tile.ModTileEntities;
 import net.neptune.mythronix.game.particles.ModParticles;
 
@@ -29,6 +23,7 @@ public class ClientListener {
         ClientRegistry.bindTileEntityRenderer(ModTileEntities.PURIFIER_TILE.get(), PurifierRenderer::new);
         ClientRegistry.bindTileEntityRenderer(ModTileEntities.CORRUPTER_STATUE_TILE.get(), CorrupterStatueRenderer::new);
         ClientRegistry.bindTileEntityRenderer(ModTileEntities.CORRUPTER_DOOR_TILE.get(), CorrupterDoorRenderer::new);
+        ClientRegistry.bindTileEntityRenderer(ModTileEntities.UNCORRUPTER_TILE.get(), UnCorrupterRenderer::new);
     }
 
     @SubscribeEvent

@@ -20,6 +20,7 @@ import net.neptune.mythronix.game.blocks.deco.CorrupterAltarBlock;
 import net.neptune.mythronix.game.blocks.geckolib.CorrupterDoor;
 import net.neptune.mythronix.game.blocks.geckolib.CorrupterStatue;
 import net.neptune.mythronix.game.blocks.geckolib.PurifierBlock;
+import net.neptune.mythronix.game.blocks.geckolib.UnCorrupterCatalyserBlock;
 import net.neptune.mythronix.game.blocks.ores.*;
 import net.neptune.mythronix.game.items.ModItems;
 import net.neptune.mythronix.game.particles.ModParticles;
@@ -72,7 +73,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> CORRUPTED_BOOKSHELF = newBlockBaseDrops("corrupted_bookshelf", ModTabs.mythronix, Material.WOOD,1, ToolType.AXE,1.5f,1.5f, SoundType.WOOD);
 
     public static final RegistryObject<Block> MAGICAL_WALL = newBlockBase("magical_wall", ModTabs.mythronix, Material.WOOD, 1, ToolType.PICKAXE, -1f, 3600000f, SoundType.STONE);
-    public static final RegistryObject<Block> UNCCORUPTER = registerBlock("uncorrupter", () -> new UnCorrupterBlock());
+    public static final RegistryObject<Block> UNCCORUPTER_CATALYSER = registerBlock("uncorrupter_catalyser", () -> new UnCorrupterCatalyserBlock(), ModTabs.mythronix);
 
     public static final RegistryObject<Block> FIRE_SAPLING = registerBlock("fire_sapling", () ->
             new SaplingBlock(new FireTree(), AbstractBlock.Properties.copy(Blocks.OAK_SAPLING).noOcclusion().sound(SoundType.GRASS)), ModTabs.mythronix);

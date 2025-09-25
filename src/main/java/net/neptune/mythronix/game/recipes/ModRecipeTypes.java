@@ -9,6 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.neptune.mythronix.Main;
 import net.neptune.mythronix.game.recipes.types.PurifierRecipe;
+import net.neptune.mythronix.game.recipes.types.UnCorrupterRecipe;
 
 public class ModRecipeTypes {
     public static final DeferredRegister<IRecipeSerializer<?>> RECIPE_SERIALIZER = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, Main.MODID);
@@ -16,11 +17,17 @@ public class ModRecipeTypes {
     public static final RegistryObject<PurifierRecipe.Serializer> PURIFIER_RECIPE_SERIALIZER =
             RECIPE_SERIALIZER.register("purify", PurifierRecipe.Serializer::new);
 
+    public static final RegistryObject<UnCorrupterRecipe.Serializer> UNCORRUPTER_RECIPE_SERIALIZER =
+            RECIPE_SERIALIZER.register("uncorrupting", UnCorrupterRecipe.Serializer::new);
+
     public static final IRecipeType<PurifierRecipe> PURIFIER_RECIPE = new PurifierRecipe.PurifierRecipeType();
+
+    public static final IRecipeType<UnCorrupterRecipe> UNCORRUPTER_RECIPE = new UnCorrupterRecipe.UnCorrupterRecipeType();
 
     public static void register(IEventBus bus){
         RECIPE_SERIALIZER.register(bus);
 
         Registry.register(Registry.RECIPE_TYPE, PurifierRecipe.TYPE_ID, PURIFIER_RECIPE);
+        Registry.register(Registry.RECIPE_TYPE, UnCorrupterRecipe.TYPE_ID, UNCORRUPTER_RECIPE);
     }
 }

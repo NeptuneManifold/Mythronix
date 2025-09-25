@@ -109,7 +109,10 @@
 
   "block.mt.corrupter_door": "Corrupter Door",
 
-  "block.mt.uncorrupter": "Uncorrupter",
+  "block.mt.uncorrupter_catalyser": "Uncorrupter Catalyser",
+
+  "screen.mt.uncorrupter": "UnCorrupter",
+  "jei.mt.uncorrupting": "unCorrupting",
 
   "item.mt.boreal_dust": "Boreal Dust",
   "item.mt.corrupted_heart": "Corrupted Heart",

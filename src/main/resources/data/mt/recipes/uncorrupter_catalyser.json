@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " _ ",
+    " I ",
+    "MMM"
+  ],
+  "key": {
+    "_": {
+      "item": "mt:corrupted_bricks_slab"
+    },
+    "I": {
+      "item": "minecraft:iron_block"
+    },
+    "M": {
+      "item": "mt:corrupted_bricks"
+    }
+  },
+  "result": {
+    "item": "mt:uncorrupter_catalyser",
+    "count": 1
+  }
+}

@@ -1,0 +1,71 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.door.open": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 2,
+			"bones": {
+				"lock": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [-21.38225, 34.05444, 15.14371]
+						},
+						"1.0": {
+							"vector": [-113.43175, 74.37123, -16.10214]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [-18, -22, -7]
+						},
+						"1.0": {
+							"vector": [-25, -22, -20]
+						},
+						"1.5": {
+							"vector": [-29, -22, -28]
+						}
+					}
+				},
+				"left": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"1.0": {
+							"vector": [0, -30, 0]
+						},
+						"1.5": {
+							"vector": [0, -55, 0]
+						},
+						"2.0": {
+							"vector": [0, -90, 0]
+						}
+					}
+				},
+				"right": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"1.0": {
+							"vector": [0, 25, 0]
+						},
+						"1.5": {
+							"vector": [0, 57.5, 0]
+						},
+						"2.0": {
+							"vector": [0, 90, 0]
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

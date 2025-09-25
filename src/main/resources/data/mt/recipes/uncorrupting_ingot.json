@@ -1,0 +1,14 @@
+{
+  "type": "mt:uncorrupting",
+  "ingredients": [
+    {
+      "item": "mt:corrupted_ingot"
+    },
+    {
+      "item": "mt:solidified_mana"
+    }
+  ],
+  "output": {
+    "item": "minecraft:iron_ingot"
+  }
+}
