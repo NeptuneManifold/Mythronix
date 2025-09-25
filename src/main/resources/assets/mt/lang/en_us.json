@@ -107,6 +107,10 @@
   "item.mt.corrupter_heart": "Corrupter Heart",
   "item.mt.corrupter_key": "Corrupter key",
 
+  "block.mt.corrupter_door": "Corrupter Door",
+
+  "block.mt.uncorrupter": "Uncorrupter",
+
   "item.mt.boreal_dust": "Boreal Dust",
   "item.mt.corrupted_heart": "Corrupted Heart",
   "item.mt.corrupted_ingot": "Corrupted Ingot",

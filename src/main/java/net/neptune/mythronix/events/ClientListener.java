@@ -14,6 +14,7 @@ import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neptune.mythronix.Main;
+import net.neptune.mythronix.game.blocks.geckolib.render.CorrupterDoorRenderer;
 import net.neptune.mythronix.game.blocks.geckolib.render.CorrupterStatueRenderer;
 import net.neptune.mythronix.game.blocks.geckolib.render.PurifierRenderer;
 import net.neptune.mythronix.game.blocks.tile.ModTileEntities;
@@ -27,6 +28,7 @@ public class ClientListener {
     public static void registerRenderers(final FMLClientSetupEvent e){
         ClientRegistry.bindTileEntityRenderer(ModTileEntities.PURIFIER_TILE.get(), PurifierRenderer::new);
         ClientRegistry.bindTileEntityRenderer(ModTileEntities.CORRUPTER_STATUE_TILE.get(), CorrupterStatueRenderer::new);
+        ClientRegistry.bindTileEntityRenderer(ModTileEntities.CORRUPTER_DOOR_TILE.get(), CorrupterDoorRenderer::new);
     }
 
     @SubscribeEvent

@@ -3,16 +3,20 @@ package net.neptune.mythronix.game.blocks.geckolib;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import net.neptune.mythronix.game.blocks.tile.CorrupterStatueTile;
+import net.neptune.mythronix.game.blocks.tile.CorrupterDoorTile;
 import net.neptune.mythronix.game.blocks.tile.ModTileEntities;
 import net.neptune.mythronix.game.items.ModItems;
+import sun.security.provider.SHA;
 
 import javax.annotation.Nullable;
 
@@ -29,7 +33,7 @@ public class CorrupterDoor extends Block {
     @Nullable
     @Override
     public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-        return ModTileEntities.CORRUPTER_STATUE_TILE.get().create();
+        return ModTileEntities.CORRUPTER_DOOR_TILE.get().create();
     }
 
     @Override
@@ -42,14 +46,19 @@ public class CorrupterDoor extends Block {
         if (!pLevel.isClientSide) {
             TileEntity tileEntity = pLevel.getBlockEntity(pPos);
 
-            if (tileEntity instanceof CorrupterStatueTile) {
-                if (pPlayer.getItemInHand(pHand).getItem().equals(ModItems.CORRUPTER_HEART.get())) {
+            if (tileEntity instanceof CorrupterDoorTile) {
+                if (pPlayer.getItemInHand(pHand).getItem().equals(ModItems.CORRUPTER_KEY.get())) {
 
-                    ((CorrupterStatueTile) tileEntity).setGoodItem(true);
+                    ((CorrupterDoorTile) tileEntity).setGoodItem(true);
                     tileEntity.setChanged();
+
+                    ItemStack is = pPlayer.getItemInHand(pHand);
+                    is.setCount(is.getCount() - 1);
+
+                    pPlayer.setItemInHand(pHand ,is);
                 }
             } else {
-                throw new IllegalStateException("Blem avec la statue dev de merde");
+                throw new IllegalStateException("Blem avec la porte dev de merde");
             }
         }
         return ActionResultType.SUCCESS;

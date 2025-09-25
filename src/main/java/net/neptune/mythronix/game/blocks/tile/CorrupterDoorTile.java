@@ -7,6 +7,7 @@ import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
+import net.minecraft.util.math.BlockPos;
 import net.neptune.mythronix.game.entities.CorrupterEntity;
 import net.neptune.mythronix.game.entities.ModEntityTypes;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -80,7 +81,7 @@ public class CorrupterDoorTile extends TileEntity implements ITickableTileEntity
 
     private PlayState predicate(AnimationEvent<CorrupterDoorTile> e) {
         if(isGoodItem()){
-            e.getController().setAnimation(new AnimationBuilder().addAnimation("animation.corrupter_statue.revive", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME));
+            e.getController().setAnimation(new AnimationBuilder().addAnimation("animation.door.open", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME));
         }
 
         return PlayState.CONTINUE;
@@ -97,7 +98,30 @@ public class CorrupterDoorTile extends TileEntity implements ITickableTileEntity
     public void tick() {
         if(isGoodItem()){
             if(this.anim >= 40){
+
+                BlockPos left = new BlockPos(this.getBlockPos().getX() + 1, this.getBlockPos().getY(), this.getBlockPos().getZ());
+                BlockPos right = new BlockPos(this.getBlockPos().getX() - 1, this.getBlockPos().getY(), this.getBlockPos().getZ());
+
+                BlockPos middleCenter = new BlockPos(this.getBlockPos().getX(), this.getBlockPos().getY() + 1, this.getBlockPos().getZ());
+                BlockPos middleLeft = new BlockPos(this.getBlockPos().getX() + 1, this.getBlockPos().getY() + 1, this.getBlockPos().getZ());
+                BlockPos middleRight = new BlockPos(this.getBlockPos().getX() - 1, this.getBlockPos().getY() + 1, this.getBlockPos().getZ());
+
+                BlockPos upCenter = new BlockPos(this.getBlockPos().getX(), this.getBlockPos().getY() + 2, this.getBlockPos().getZ());
+                BlockPos upLeft = new BlockPos(this.getBlockPos().getX() + 1, this.getBlockPos().getY() + 2, this.getBlockPos().getZ());
+                BlockPos upRight = new BlockPos(this.getBlockPos().getX() - 1, this.getBlockPos().getY() + 2, this.getBlockPos().getZ());
+
                 this.getLevel().destroyBlock(this.getBlockPos(), false);
+
+                this.getLevel().destroyBlock(left, false);
+                this.getLevel().destroyBlock(right, false);
+
+                this.getLevel().destroyBlock(middleRight, false);
+                this.getLevel().destroyBlock(middleCenter, false);
+                this.getLevel().destroyBlock(middleLeft, false);
+
+                this.getLevel().destroyBlock(upCenter, false);
+                this.getLevel().destroyBlock(upLeft, false);
+                this.getLevel().destroyBlock(upRight, false);
             }
 
             this.anim++;
