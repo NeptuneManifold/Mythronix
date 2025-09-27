@@ -9,6 +9,8 @@ plugins {
 group = mod_group_id
 version = mod_version
 
+
+
 base {
     archivesName = mod_id
 }
@@ -18,7 +20,9 @@ java {
 }
 
 minecraft {
-    mappings channel: mapping_channel, version: mapping_version
+    mappings channel: 'parchment', version: '2022.03.06-1.16.5'
+
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
     copyIdeResources = true
     runs {
         configureEach {

@@ -26,6 +26,7 @@ import net.neptune.mythronix.game.fluids.ModFluids;
 import net.neptune.mythronix.game.items.ModItems;
 import net.neptune.mythronix.game.particles.ModParticles;
 import net.neptune.mythronix.game.recipes.ModRecipeTypes;
+import net.neptune.mythronix.game.structures.ModStructures;
 import net.neptune.mythronix.game.trees.ModWoodTypes;
 import net.neptune.mythronix.menus.containers.ModContainers;
 import net.neptune.mythronix.menus.screens.ModScreens;
@@ -55,7 +56,7 @@ public class Main {
          * Fix Tharvyrn
          * Update the patchouli book
          * Mana
-         * build some structures and make features for the biomes
+         * loot for the boss
         */
 
         GeckoLib.initialize();
@@ -78,6 +79,7 @@ public class Main {
         ModFluids.register(bus);
         ModEffects.register(bus);
         ModEntityTypes.register(bus);
+        ModStructures.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
