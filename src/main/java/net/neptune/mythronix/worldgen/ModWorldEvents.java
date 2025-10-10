@@ -57,15 +57,18 @@ public class ModWorldEvents {
                 LogManager.getLogger().error("Was unable to check if " + serverWorld.dimension().location() + " is using Terraforged's ChunkGenerator");
             }
 
-            if(serverWorld.getChunkSource().generator instanceof FlatChunkGenerator && serverWorld.dimension().equals(ServerWorld.OVERWORLD)) {
+            if(serverWorld.getChunkSource().getGenerator() instanceof FlatChunkGenerator && serverWorld.dimension().equals(ServerWorld.OVERWORLD)) {
                 return;
             }
 
             Map<Structure<?>, StructureSeparationSettings> tempMap =
-                    new HashMap<>(serverWorld.getChunkSource().generator.getSettings().structureConfig());
-            tempMap.putIfAbsent(ModStructures.CORRUPTED_HOUSE.get(),
+                    new HashMap<>(serverWorld.getChunkSource().getGenerator().getSettings().structureConfig());
+
+            tempMap.putIfAbsent(
+                    ModStructures.CORRUPTED_HOUSE.get(),
                     DimensionStructuresSettings.DEFAULTS.get(ModStructures.CORRUPTED_HOUSE.get()));
-            serverWorld.getChunkSource().generator.getSettings().structureConfig = tempMap;
+
+            serverWorld.getChunkSource().getGenerator().getSettings().structureConfig = tempMap;
         }
     }
 }
