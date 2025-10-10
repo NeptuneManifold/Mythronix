@@ -34,8 +34,6 @@ import net.neptune.mythronix.worldgen.biomes.*;
 import org.apache.logging.log4j.*;
 import software.bernie.geckolib3.GeckoLib;
 
-import java.rmi.registry.RegistryHandler;
-
 @Mod(Main.MODID)
 public class Main {
 
@@ -55,8 +53,20 @@ public class Main {
         /** TODO:
          * Fix Tharvyrn
          * Update the patchouli book
+         * limit the spawner for mobs
          * Mana
          * loot for the boss
+         * Craft for the Sword of life
+         * Craft for the Corrupter heart
+         * Craft for the Corrupted Sappling
+         * Craft for the Corrupyted bricks and variants
+         * Craft for the Corrupted Lantern
+         * Craft corrupted torch
+         * Summon corrupter structure
+         * Spawn Tharvyrn inside
+         * Fix particle for Wall Torch
+         * reset loot tables
+         * better Magic Wall texture
         */
 
         GeckoLib.initialize();
@@ -98,6 +108,7 @@ public class Main {
 
         ModCapabilities.register();
         ModPackets.register();
+        ModStructures.setupStructures();
     }
 
     private void doClientStuff(final FMLClientSetupEvent e) {
