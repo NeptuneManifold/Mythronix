@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_fence",
+  "pattern": [
+    "iii",
+    "iti",
+    "iii"
+  ],
+  "key": {
+    "t": {
+      "item": "mt:corrupted_torch_item"
+    },
+    "i": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "result": {
+    "item": "mt:corrupted_lantern",
+    "count": 1
+  }
+}

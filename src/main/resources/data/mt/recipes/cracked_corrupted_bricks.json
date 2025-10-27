@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "mt:corrupted_bricks"
+  },
+  "result": "mt:cracked_corrupted_bricks",
+  "experience": 0.1,
+  "cookingtime": 200
+}

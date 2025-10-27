@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_fence",
+  "pattern": [
+    "p  ",
+    "pp ",
+    "ppp"
+  ],
+  "key": {
+    "p": {
+      "item": "mt:corrupted_bricks"
+    }
+  },
+  "result": {
+    "item": "mt:corrupted_bricks_stairs",
+    "count": 4
+  }
+}

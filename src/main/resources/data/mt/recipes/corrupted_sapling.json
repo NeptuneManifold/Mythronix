@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_fence",
+  "pattern": [
+    "p",
+    "b"
+  ],
+  "key": {
+    "p": {
+      "item": "mt:corrupted_ingot"
+    },
+    "b": {
+      "item": "minecraft:oak_sapling"
+    }
+  },
+  "result": {
+    "item": "mt:corrupted_sapling",
+    "count": 1
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_fence",
+  "pattern": [
+    "bbb"
+  ],
+  "key": {
+    "b": {
+      "item": "mt:corrupted_bricks"
+    }
+  },
+  "result": {
+    "item": "mt:corrupted_bricks_slab",
+    "count": 6
+  }
+}
