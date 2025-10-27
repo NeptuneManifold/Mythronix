@@ -57,8 +57,8 @@ public class Main {
          * Update the patchouli book
          * Mana
          * loot for the boss
+         * Fix Fallen Guardian
          * Craft for the Sword of life
-         * Craft for the Corrupter heart
          * Summon corrupter structure
          * effect better render corrupted
          * Spawn Tharvyrn inside
