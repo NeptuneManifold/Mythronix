@@ -18,6 +18,7 @@ public class ModEventBusEvents {
          e.put(ModEntityTypes.CORRUPTED_GOLEM.get(), CorruptedGolemEntity.setCustomAttributes().build());
          e.put(ModEntityTypes.THARVYRN.get(), TharvyrnEntity.setCustomAttributes().build());
          e.put(ModEntityTypes.CORRUPTER.get(), CorrupterEntity.setCustomAttributes().build());
+         e.put(ModEntityTypes.FALLEN_GUARDIAN.get(), FallenGuardianEntity.setCustomAttributes().build());
      }
 
      @SubscribeEvent

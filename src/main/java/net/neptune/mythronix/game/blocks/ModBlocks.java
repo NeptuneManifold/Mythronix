@@ -8,6 +8,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.Effects;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
@@ -175,13 +176,22 @@ public class ModBlocks {
                 @Override
                 public void animateTick(BlockState state, World world, BlockPos pos, Random random) {
                     if (world.isClientSide) {
-                        double x = pos.getX() + 0.5D;
-                        double y = pos.getY() + 0.7D;
-                        double z = pos.getZ() + 0.5D;
+                        Direction direction = state.getValue(FACING);
+                        double x = (double) pos.getX() + 0.5D;
+                        double y = (double) pos.getY() + 0.7D;
+                        double z = (double) pos.getZ() + 0.5D;
+                        Direction opposite = direction.getOpposite();
 
+                        // Décalage de la flamme par rapport au mur
+                        double offsetX = 0.27D * opposite.getStepX();
+                        double offsetZ = 0.27D * opposite.getStepZ();
+
+                        // Génère ta particule personnalisée
                         world.addParticle(ModParticles.CORRUPTED_FIRE.get(),
-                                x, y, z,
-                                0.0D, 0.01D, 0.0D);
+                                x + offsetX,
+                                y + 0.22D,
+                                z + offsetZ,
+                                0.0D, 0.0D, 0.0D);
                     }
                 }
             }

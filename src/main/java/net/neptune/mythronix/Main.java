@@ -3,9 +3,11 @@ package net.neptune.mythronix;
 import net.minecraft.block.WoodType;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.*;
+import net.minecraft.client.renderer.entity.SpriteRenderer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.*;
@@ -15,13 +17,14 @@ import net.minecraftforge.fml.network.simple.SimpleChannel;
 import net.neptune.mythronix.capability.packets.ModPackets;
 import net.neptune.mythronix.game.ModCapabilities;
 import net.neptune.mythronix.game.blocks.ModBlocks;
+import net.neptune.mythronix.game.blocks.geckolib.render.CorrupterDoorRenderer;
+import net.neptune.mythronix.game.blocks.geckolib.render.CorrupterStatueRenderer;
+import net.neptune.mythronix.game.blocks.geckolib.render.PurifierRenderer;
+import net.neptune.mythronix.game.blocks.geckolib.render.UnCorrupterRenderer;
 import net.neptune.mythronix.game.blocks.tile.ModTileEntities;
 import net.neptune.mythronix.game.effects.ModEffects;
 import net.neptune.mythronix.game.entities.ModEntityTypes;
-import net.neptune.mythronix.game.entities.render.BorealDeerRenderer;
-import net.neptune.mythronix.game.entities.render.CorruptedGolemRenderer;
-import net.neptune.mythronix.game.entities.render.CorrupterRenderer;
-import net.neptune.mythronix.game.entities.render.TharvyrnRenderer;
+import net.neptune.mythronix.game.entities.render.*;
 import net.neptune.mythronix.game.fluids.ModFluids;
 import net.neptune.mythronix.game.items.ModItems;
 import net.neptune.mythronix.game.particles.ModParticles;
@@ -51,22 +54,14 @@ public class Main {
     public Main() {
 
         /** TODO:
-         * Fix Tharvyrn
          * Update the patchouli book
-         * limit the spawner for mobs
          * Mana
          * loot for the boss
          * Craft for the Sword of life
          * Craft for the Corrupter heart
-         * Craft for the Corrupted Sappling
-         * Craft for the Corrupyted bricks and variants
-         * Craft for the Corrupted Lantern
-         * Craft corrupted torch
          * Summon corrupter structure
+         * effect better render corrupted
          * Spawn Tharvyrn inside
-         * Fix particle for Wall Torch
-         * reset loot tables
-         * better Magic Wall texture
         */
 
         GeckoLib.initialize();
@@ -157,6 +152,13 @@ public class Main {
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.CORRUPTED_GOLEM.get(), CorruptedGolemRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.THARVYRN.get(), TharvyrnRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.CORRUPTER.get(), CorrupterRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.FALLEN_GUARDIAN.get(), FallenGuardianRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.CORRUPTION_ORB.get(), CorruptionOrbRenderer::new);
+
+        ClientRegistry.bindTileEntityRenderer(ModTileEntities.PURIFIER_TILE.get(), PurifierRenderer::new);
+        ClientRegistry.bindTileEntityRenderer(ModTileEntities.CORRUPTER_STATUE_TILE.get(), CorrupterStatueRenderer::new);
+        ClientRegistry.bindTileEntityRenderer(ModTileEntities.CORRUPTER_DOOR_TILE.get(), CorrupterDoorRenderer::new);
+        ClientRegistry.bindTileEntityRenderer(ModTileEntities.UNCORRUPTER_TILE.get(), UnCorrupterRenderer::new);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent e) {

@@ -16,6 +16,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> MAGIC_STICK = newItemBase("magic_stick", ModTabs.mythronix);
 
+    public static final RegistryObject<Item> CORRUPTION_ORB_ITEM = newItemBase("corruption_orb_item");
+
     public static final RegistryObject<Item> BOREAL_DUST = newItemBase("boreal_dust", ModTabs.mythronix);
     public static final RegistryObject<Item> CORRUPTED_HEART = newItemBase("corrupted_ingot", ModTabs.mythronix);
     public static final RegistryObject<Item> CORRUPTED_INGOT = newItemBase("corrupted_heart", ModTabs.mythronix);
@@ -72,6 +74,10 @@ public class ModItems {
 
     public static RegistryObject<Item> newItemBase(String id, ItemGroup tab){
         return ITEMS.register(id, () -> new Item(new Item.Properties().tab(tab).stacksTo(64)));
+    }
+
+    public static RegistryObject<Item> newItemBase(String id){
+        return ITEMS.register(id, () -> new Item(new Item.Properties().stacksTo(64)));
     }
 
     public static void register(IEventBus bus) {

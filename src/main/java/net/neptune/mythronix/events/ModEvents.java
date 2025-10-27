@@ -4,12 +4,17 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.gui.ForgeIngameGui;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
+import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.neptune.mythronix.Main;
@@ -18,6 +23,7 @@ import net.neptune.mythronix.capability.ManaLevelUtils;
 import net.neptune.mythronix.capability.commands.ManaLevelCommands;
 import net.neptune.mythronix.game.ModCapabilities;
 import net.neptune.mythronix.game.effects.ModEffects;
+import net.neptune.mythronix.game.entities.CorruptedGolemEntity;
 import net.neptune.mythronix.menus.screens.ManaLevelScreen;
 
 import static net.neptune.mythronix.game.ModCapabilities.MANA_LEVEL_ID;
@@ -88,6 +94,29 @@ public class ModEvents {
         if(event.getType() == RenderGameOverlayEvent.ElementType.ALL){
             if(!Minecraft.getInstance().player.isSpectator()){
                 ManaLevelScreen.render(event.getMatrixStack());
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onCheckSpawn(LivingSpawnEvent.CheckSpawn e){
+        if(e.getSpawnReason() != SpawnReason.SPAWNER) return;
+
+        if(!(e.getEntityLiving() instanceof CorruptedGolemEntity)){
+            if(e.getEntityLiving().level.isClientSide) return;
+
+            ServerWorld w = (ServerWorld) e.getEntityLiving().level;
+
+            double x = e.getEntityLiving().getX();
+            double y = e.getEntityLiving().getY();
+            double z = e.getEntityLiving().getZ();
+
+            AxisAlignedBB box = new AxisAlignedBB(x,y,z,x,y,z).inflate(16);
+
+            int count = w.getEntitiesOfClass(CorruptedGolemEntity.class, box).size();
+
+            if(count >= 3){
+                e.setResult(Event.Result.DENY);
             }
         }
     }

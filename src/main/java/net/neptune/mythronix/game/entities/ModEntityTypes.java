@@ -8,6 +8,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.neptune.mythronix.Main;
+import net.neptune.mythronix.game.entities.shoot.CorruptionOrbEntity;
 
 public class ModEntityTypes {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES, Main.MODID);
@@ -35,6 +36,20 @@ public class ModEntityTypes {
                     () -> EntityType.Builder.of(CorrupterEntity::new,
                             EntityClassification.MONSTER).sized(1f,3f)
                             .build(new ResourceLocation(Main.MODID, "corrupter").toString()));
+
+    public static final RegistryObject<EntityType<FallenGuardianEntity>> FALLEN_GUARDIAN =
+            ENTITY_TYPES.register("fallen_guardian",
+                    () -> EntityType.Builder.of(FallenGuardianEntity::new,
+                            EntityClassification.MONSTER).sized(1f,1.8f)
+                            .build(new ResourceLocation(Main.MODID, "fallen_guardian").toString()));
+
+    public static final RegistryObject<EntityType<CorruptionOrbEntity>> CORRUPTION_ORB =
+            ENTITY_TYPES.register("corruption_orb",
+                    () -> EntityType.Builder.<CorruptionOrbEntity>of(CorruptionOrbEntity::new,
+                            EntityClassification.MISC).sized(0.25F, 0.25F)
+                            .clientTrackingRange(10)
+                            .setShouldReceiveVelocityUpdates(true)
+                            .updateInterval(10).build(new ResourceLocation(Main.MODID, "corruption_orb").toString()));
 
     public static void register(IEventBus bus){
         ENTITY_TYPES.register(bus);
