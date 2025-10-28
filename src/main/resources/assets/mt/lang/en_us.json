@@ -107,6 +107,16 @@
   "item.mt.corrupter_heart": "Corrupter Heart",
   "item.mt.corrupter_key": "Corrupter key",
 
+  "item.mt.fallen_leather": "Fallen Leather",
+
+  "item.mt.blank_rune": "Blank Rune",
+  "item.mt.fire_rune": "Fire Rune",
+  "item.mt.ice_rune": "Ice Rune",
+  "item.mt.arcane_rune": "Arcane Rune",
+  "item.mt.wind_rune": "Wind Rune",
+  "item.mt.water_rune": "Water Rune",
+  "item.mt.nature_rune": "Nature Rune",
+
   "block.mt.corrupter_door": "Corrupter Door",
 
   "block.mt.uncorrupter_catalyser": "Uncorrupter Catalyser",

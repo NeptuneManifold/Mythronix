@@ -16,6 +16,16 @@ public class ModItems {
 
     public static final RegistryObject<Item> MAGIC_STICK = newItemBase("magic_stick", ModTabs.mythronix);
 
+    public static final RegistryObject<Item> FALLEN_LEATHER = newItemBase("fallen_leather", ModTabs.mythronix);
+
+    public static final RegistryObject<Item> NATURE_RUNE = newItemBase("nature_rune", ModTabs.mythronix);
+    public static final RegistryObject<Item> FIRE_RUNE = newItemBase("fire_rune", ModTabs.mythronix);
+    public static final RegistryObject<Item> ICE_RUNE = newItemBase("ice_rune", ModTabs.mythronix);
+    public static final RegistryObject<Item> WATER_RUNE = newItemBase("water_rune", ModTabs.mythronix);
+    public static final RegistryObject<Item> ARCANE_RUNE = newItemBase("arcane_rune", ModTabs.mythronix);
+    public static final RegistryObject<Item> WIND_RUNE = newItemBase("wind_rune", ModTabs.mythronix);
+    public static final RegistryObject<Item> BLANK_RUNE = newItemBase("blank_rune", ModTabs.mythronix);
+
     public static final RegistryObject<Item> CORRUPTION_ORB_ITEM = newItemBase("corruption_orb_item");
 
     public static final RegistryObject<Item> BOREAL_DUST = newItemBase("boreal_dust", ModTabs.mythronix);
