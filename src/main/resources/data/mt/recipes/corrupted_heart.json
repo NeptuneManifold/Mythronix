@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#MR",
+    "mAm",
+    "RM#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:bone"
+    },
+    "M": {
+      "item": "mt:fallen_leather"
+    },
+    "R": {
+      "item": "minecraft:rotten_flesh"
+    },
+    "m": {
+      "item": "mt:corrupted_ingot"
+    },
+    "A": {
+      "item": "mt:corrupted_heart"
+    }
+  },
+  "result": {
+    "item": "mt:corrupter_heart",
+    "count": 1
+  }
+}
